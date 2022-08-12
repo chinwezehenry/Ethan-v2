@@ -70,7 +70,7 @@ global.mess = {
     error: 'An error occurred!',
     banned: 'You are *Banned* fron using the bot, seek owners number to get *unbanned*!',
     bangc: 'This Group is *Banned* from using Commands!, seek help from bot owner by typing command *-owner*',
-    nonsfw: 'Ger yourself a girlfriend/boyfriend! This is not a porn enabled group!'
+    nonsfw: 'Get yourself a girlfriend/boyfriend! This is not a porn enabled group!'
     
 }
 
