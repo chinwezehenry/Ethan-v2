@@ -1524,20 +1524,20 @@ case 'support': case 'supportgc':
 
 case 'repo': case 'botrepo':
     
-    reply(`*My Source Code:* https://github.com/FantoX001/Miku-MD`)
+    reply(`*My Fork Source Code:* https://github.com/jayjay-ops/Ethan-v2`)
     break
 
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
-        reply(` *━━━━━━〈  📛 NSFW Menu 📛  〉━━━━━━*\n\nhentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
+        reply(` *━━━━━〈 📛 NSFW Menu 📛 〉━━━━━*\n\nhentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
     break
 
 case 'reaction': case 'react': case 'reactions':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` *━━━━━━〈  📍 Reactions 📍  〉━━━━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
+            reply(` *━━━━━〈 📍 Reactions 📍 〉━━━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break   
     
 
@@ -1883,7 +1883,7 @@ case 'delete': case 'del': {
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (welcm) return replay('Already activated')
+ if (welcm) return replay('Welcome message already activated')
  wlcm.push(from)
  replay('Activated Welcome/Left message in this group.')
  } else if (args[0] === "off") {
@@ -4708,77 +4708,77 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
       
- const helpmenu = `Konichiwa *${pushname}* Senpai,
+ const helpmenu = `❣️ Hello Stranger *${pushname}*, have we met?
 
-I am *Miku Nakano*, a bot developed by *Fantox*.
+I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 
-🔰 My prefix is:  ${prefix}
+🔘 My prefix is:  ${prefix}
 
 Here's the list of my Commands.
  
 
 
- *━━━━━━〈  🎆 Core 🎆  〉━━━━━━*
+ *━━━━━━〈 🌸 Core 🌺 〉━━━━━━*
 
 profile, help, delete, listgc, listpc, welcome, support, repo, script 
  
- *━━━━━━〈  🎀 Owner 🎀  〉━━━━━━*
+ *━━━━━〈 🎀 Owner 🎀 〉━━━━━*
 
 self, public, ban, bangroup, bye, join, bye, block, unblock, broadcast 
 
- *━━━━━━〈  ⭕ Group ⭕  〉━━━━━━*
+ *━━━━━〈 👥 Group 👥 〉━━━━━*
 
 promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw 
 
- *━━━━━━〈  ➰ Anti Link ➰  〉━━━━━━*
+ *━━━━━〈 ⛓️ Anti Link ⛓️ 〉━━━━━*
  
 antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, antilinkfb, antilinktwit, antilinkall, antiwame
 
- *━━━━━━〈  🔍 Search 🔍  〉━━━━━━*
+ *━━━━━〈 🔍 Search 🔍 〉━━━━━*
 
 play, song, yts, lyrics, google, playstore, gimage, pinterest, image, movie, wallpaper, searchgc, happymod, wikimedia, ringtone, anime, animestory, manga, ringtone   
 
- *━━━━━━〈  🔰 Convert 🔰  〉━━━━━━*
+ *━━━━━〈 ♂️ Convert ♂️ 〉━━━━━*
 
 sticker, toimg, tovideo, togif , steal, stickermeme, emojimix, tourl, tomp3, toaudio
 
- *━━━━━━〈  🔉 Audio 🔉  〉━━━━━━*
+ *━━━━━〈 🔉 Audio 🔉 〉━━━━━*
 
 bass, tempo, blown, deep, earrape, fast, fat, nightcore, reverse, robot, slow, squirrel
 
- *━━━━━━〈  📍 Reactions 📍  〉━━━━━━*
+ *━━━━━〈 👌 Reactions 👌 〉━━━━━*
 
 bonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe
 
- *━━━━━━〈  🌌 Downloader 🌌  〉━━━━━━*
+ *━━━━━〈 📥 Downloader 📥 〉━━━━━*
 
 play, ytmp3, ytmp4, ytvideo, mediafire, instagram, igtv, facebook, fbmp3, twitter, twittermp3, tiktok, tiktokaudio, tiktoknowm, mediafire  
 
- *━━━━━━〈  🈴 Weeb 🈴  〉━━━━━━*
+ *━━━━━〈 🔮 Weeb 🔮 〉━━━━━*
 
 waifu, loli, neko, ppcouple, feed, foxgirl, feed, meow, tickle, wallpaper, coffee, animenom, waifu3, neko2, feed, meow, tickle, migumin, awoo, animewallpaper2, anime, manga
 
- *━━━━━━〈  ♨️ Informative ♨️  〉━━━━━━*
+ *━━━━━〈 📣 Informative 📣 〉━━━━━*
 
 animequote, quote, covid, earthquake, wiki
 
- *━━━━━━〈  🎗 Others 🎗  〉━━━━━━*
+ *━━━━━〈 🐱 Others 🐱 〉━━━━━*
 
 stickermeme, quotes, darkjoke 
 
- *━━━━━━〈  🎐 Fun 🎐  〉━━━━━━*
+ *━━━━━〈  🦋 Fun 🦋 〉━━━━━*
 
 reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomecheck, greatcheck, gaycheck, cutecheck, lesbiancheck, hornycheck, prettycheck, lovelycheck, uglycheck, charactercheck
 
- *━━━━━━〈  🪁 Essentials 🪁  〉━━━━━━*
+ *━━━━〈 🐬 Essentials 🐬 〉━━━━*
 
 translate, fliptext, toletter
 
- *━━━━━━〈  💥 NSFW 💥  〉━━━━━━*
+ *━━━━━〈 🐾 NSFW 🐾 〉━━━━━*
 
-🍁 Type " *${prefix}nsfw* " then enable NSFW (Admin only!) 
+🍊 Type " *${prefix}nsfw* " then enable NSFW (Admin only!) 
 
-🍁 Then type " *${prefix}nsfwmenu* " to get full list of NSFW commands.
+🍑 Then type " *${prefix}nsfwmenu* " to get full list of NSFW commands.
 
 
 
@@ -4787,15 +4787,15 @@ translate, fliptext, toletter
  『  *${global.BotName}*  』
  Powered by: *Fantox*
 
- 🔰 To use any of these commands type 
+ 🎐 To use any of these commands type 
  " *${prefix}<Command name>* ".
  
- 🔰 To get Support Group link type " *${prefix}support* ".
+ 🎐 To get Support Group link type " *${prefix}support* ".
 
- 🔰 Type " *${prefix}help* " to get full command list.`
+ 🎐 Type " *${prefix}help* " to get full command list.`
      
  let buttonshelpm = [
-    {buttonId: `-owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
+    {buttonId: `!owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
     ]
                 let buttonMessage = {
                     file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:helpmenu},{quoted:m}),
@@ -4818,10 +4818,10 @@ case '':
       mikupic ='https://wallpapercave.com/wp/wp10524580.jpg'
     
         
- const needhelpmenu = `Do you need help ${pushname} Senpai? Type *${prefix}help* to get my full command list.`
+ const needhelpmenu = `Do you need help ${pushname} pal 🤼? Type *${prefix}help* to get my full command list.`
      
          let butRun = [
-                {buttonId: `-help`, buttonText: {displayText: 'Help'}, type: 1}
+                {buttonId: `!help`, buttonText: {displayText: 'Help'}, type: 1}
                 ]
                 let buttonMessage = {
                     file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku.mp4'),gifPlayback:true,caption:needhelpmenu},{quoted:m}),
