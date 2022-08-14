@@ -2571,7 +2571,7 @@ if (isBanChat) return reply(mess.bangc)
          console.log(number);		
       if (!m.isGroup) return replay(mess.grouponly)
       if (!isBotAdmins) return replay(mess.botadmin)
-      if (!number.length) Miku.sendMessage(m.chat, { text: `please write the number you want to add` }, { quoted: message })
+      if (!number.length){ reply(`write number of the person`)} // Miku.sendMessage(m.chat, { text: `please write the number you want to add` }, { quoted: message })
       await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
      }
      break
