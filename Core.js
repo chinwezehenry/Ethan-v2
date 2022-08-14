@@ -1536,13 +1536,13 @@ case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
-        reply(` *━━━━━〈 📛 NSFW Menu 📛 〉━━━━━*\n\nhentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
+        reply(` *━━━━━〈 🍑 NSFW Menu 🍆 〉━━━━━*\n\nhentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
     break
 
 case 'reaction': case 'react': case 'reactions':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` *━━━━━〈 📍 Reactions 📍 〉━━━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
+            reply(` *━━━━━〈 🎭 Reactions 🔮 〉━━━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break   
     
 
@@ -2567,12 +2567,11 @@ if (isBanChat) return reply(mess.bangc)
      break
 
      case 'add':{ 
-       	const number = parsedArgs.joined.replace(/\D+/g,'').replace(/\s+/g,'').toString();
-         console.log(number);		
+       	const number = parsedArgs.joined.replace(/\D+/g,'').replace(/\s+/g,'').toString();		
       if (!m.isGroup) return replay(mess.grouponly)
       if (!isBotAdmins) return replay(mess.botadmin)
-      if (!number.length){ reply(`write number of the person`)} // Miku.sendMessage(m.chat, { text: `please write the number you want to add` }, { quoted: message })
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
+      if (!number.length) await Miku.sendMessage(m.chat,`please write the number you want to add`, { quoted: message })
+      await Miku.groupParticipantsUpdate(m.chat, [number], 'add')
      }
      break
 
