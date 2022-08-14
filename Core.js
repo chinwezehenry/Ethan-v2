@@ -2566,6 +2566,16 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
+     case 'add':{ 
+       	const number = parsedArgs.joined.replace(/\D+/g,'').replace(/\s+/g,'').toString();
+         console.log(number);		
+      if (!m.isGroup) return replay(mess.grouponly)
+      if (!isBotAdmins) return replay(mess.botadmin)
+      if (!number.length) Miku.sendMessage(m.chat, { text: `please write the number you want to add` }, { quoted: message })
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
+     }
+     break
+
      case 'remove':{
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
