@@ -238,6 +238,7 @@ const isImage = (m.type === 'imageMessage')
         const isQuotedProd = m.mtype === 'extendedTextMessage' && content.includes('productMessage')
         const isQuotedReply = m.mtype === 'extendedTextMessage' && content.includes('Message')
 
+if (!command) Miku.sendMessage(m.chat, { text: Use ${prefix}Help to see command list}, { quoted: m})
 
 _sewa.expiredCheck(Miku, sewa)
 
@@ -2566,12 +2567,12 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
-     case 'add':{ 
-       	const number = parsedArgs.joined.replace(/\D+/g,'').replace(/\s+/g,'').toString();		
-      if (!m.isGroup) return replay(mess.grouponly)
+     case 'add':{     			
+        if (!m.isGroup) return replay(mess.grouponly)
       if (!isBotAdmins) return replay(mess.botadmin)
-      if (!number.length) await Miku.sendMessage(m.chat,`please write the number you want to add`, { quoted: message })
-      await Miku.groupParticipantsUpdate(m.chat, [number], 'add')
+      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+      if (!users.length) Miku.sendMessage(m.chat,`please write the number you want to add`, { quoted: message })
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
      }
      break
 
