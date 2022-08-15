@@ -4866,6 +4866,14 @@ default:
 
 */
 
+  Miku.sendMessage(m.chat, {
+					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *!𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
+				}, {
+					quoted: m
+				})
+
+
+/*				
   if (!isCmd && !isGroup){
     await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
 .then((response) => {
@@ -4875,7 +4883,16 @@ default:
 
     })
 }
+*/
+  
+  if (!icmd&&!isGroup){
+	         await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${body}]`)
+        .then((response) => {
+                 txt = `${response.data.cnt}`
 
+                m.reply(txt);
+    })
+}
 
 
 if (budy.startsWith('=>')) {
