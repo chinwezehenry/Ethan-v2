@@ -2570,8 +2570,8 @@ if (isBanChat) return reply(mess.bangc)
         if (!m.isGroup) return replay(mess.grouponly)
       if (!isBotAdmins) return replay(mess.botadmin)
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-      if (!users.length) Miku.sendMessage(m.chat,`please write the number you want to add`, { quoted: message })
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
+      if (!users.length) Miku.sendMessage(m.chat,`please write the number of the person you want to add`, { quoted: message })
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add') Miku.sendMessage(m.chat, `Successfully added ✅`, { quoted: message})
      }
      break
 
@@ -4745,7 +4745,7 @@ self, public, ban, bangroup, bye, join, bye, block, unblock, broadcast
 
  *━━━━━〈 👥 Group 👥 〉━━━━━*
 
-promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw 
+promote, demote, revoke, add, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw 
 
  *━━━━━〈 ⛓️ Anti Link ⛓️ 〉━━━━━*
  
