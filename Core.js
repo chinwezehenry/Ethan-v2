@@ -2571,7 +2571,7 @@ if (isBanChat) return reply(mess.bangc)
       if (!isBotAdmins) return replay(mess.botadmin)
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
       if (!users.length) Miku.sendMessage(m.chat,`please write the number of the person you want to add`, { quoted: message })
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add') Miku.sendMessage(m.chat, `Successfully added ✅`, { quoted: message})
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
      }
      break
 
@@ -4866,7 +4866,7 @@ default:
 
 */
 
-  if (!isCmd&&!isGroup){
+  if (!isCmd && !isGroup){
     await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
 .then((response) => {
         txt = `${response.data.cnt}`
@@ -4914,6 +4914,13 @@ if(err) return Miku.sendMessage(from, {image:ErrorPic, caption:String(err)}, {qu
 if (stdout) return replay(stdout)
 })
 }
+
+default:
+				Miku.sendMessage(m.chat, {
+					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *${prefix}𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
+				}, {
+					quoted: m
+				})
 
 
 if (isCmd && budy.toLowerCase() != undefined) {
