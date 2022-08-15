@@ -4890,7 +4890,7 @@ default:
         .then((response) => {
                  txt = `${response.data.cnt}`
 
-                m.reply(txt);
+                Miku.sendMessage(txt);
     })
 }
 
@@ -4931,15 +4931,6 @@ if(err) return Miku.sendMessage(from, {image:ErrorPic, caption:String(err)}, {qu
 if (stdout) return replay(stdout)
 })
 }
-
-/*
-default:
-				Miku.sendMessage(m.chat, {
-					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *${prefix}𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
-				}, {
-					quoted: m
-				})
-*/
 
 
 if (isCmd && budy.toLowerCase() != undefined) {
