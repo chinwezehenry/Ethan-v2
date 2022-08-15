@@ -238,7 +238,6 @@ const isImage = (m.type === 'imageMessage')
         const isQuotedProd = m.mtype === 'extendedTextMessage' && content.includes('productMessage')
         const isQuotedReply = m.mtype === 'extendedTextMessage' && content.includes('Message')
 
-if (!command) Miku.sendMessage(m.chat, { text: Use ${prefix}Help to see command list}, { quoted: m})
 
 _sewa.expiredCheck(Miku, sewa)
 
@@ -250,6 +249,7 @@ const reply = (teks) => {
             Miku.sendMessage(m.chat, { text: teks}, { quoted: m})
         }
         
+if (!command) Miku.sendMessage(m.chat, { text: `Use ${prefix}Help to see command list`}, { quoted: m})
 
 function randomNomor(angka){
             return Math.floor(Math.random() * angka) + 1
