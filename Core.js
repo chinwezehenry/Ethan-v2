@@ -249,7 +249,6 @@ const reply = (teks) => {
             Miku.sendMessage(m.chat, { text: teks}, { quoted: m})
         }
         
-if (!command) Miku.sendMessage(m.chat, { text: `Use ${prefix}Help to see command list`}, { quoted: m})
 
 function randomNomor(angka){
             return Math.floor(Math.random() * angka) + 1
