@@ -2573,9 +2573,6 @@ if (isBanChat) return reply(mess.bangc)
       if (!users.length) Miku.sendMessage(m.chat,`please write the number of the person you want to add`, { quoted: message })
       await Miku.groupParticipantsUpdate(m.chat, [users], 'add')
       replay(`Successfully Added`)
-      else{
-              reply(`Unable to add user for some reason`)
-        }
      }
      break
 
