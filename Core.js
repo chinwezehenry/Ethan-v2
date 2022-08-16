@@ -4726,14 +4726,253 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
 
 I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 
-┌───『 𝓗𝓪𝓷𝓭𝓸𝓾𝓽 』───
+┌───『 𝓗𝓪𝓷𝓭𝓸𝓾𝓽 』──
 │⊶ 𝑼𝒔𝒆 ${prefix}𝒉𝒆𝒍𝒑 𝒕𝒐 𝒔𝒆𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔
-│⊶ 𝑹𝒆𝒂𝒅 𝑩𝒐𝒕𝒕𝒐 𝒓𝒖𝒍𝒆𝒔 𝒃𝒆𝒇𝒐𝒓𝒆 𝒖𝒔𝒆
+│⊶ 𝑹𝒆𝒂𝒅 𝑩𝒐𝒕's 𝒓𝒖𝒍𝒆𝒔 𝒃𝒆𝒇𝒐𝒓𝒆 𝒖𝒔𝒆
 │⊶ © 𝑪𝒐𝒑𝒚𝒓𝒊𝒈𝒉𝒕 Miku
 │⊶ 𝑹𝒆𝒑𝒐𝒓𝒕 𝒂 𝒃𝒖𝒈 ${prefix}𝐨𝐰𝐧𝐞𝐫
-└──☘︎─────☘︎────☘︎────☘︎
+└──☘︎───☘︎───☘︎────☘︎
 
 
+╔════⧫🧧𝑪𝒐𝒓𝒆🧧
+║
+║ ${prefix}profile
+║ ${prefix}help
+║ ${prefix}delete
+║ ${prefix}listgc
+║ ${prefix}listpc
+║ ${prefix}support
+║ ${prefix}repo
+║ ${prefix}script
+║
+╚════════════╝ 
+
+╔════⧫🎀𝑶𝒘𝒏𝒆𝒓🎀
+║
+║ ${prefix}self
+║ ${prefix}public
+║ ${prefix}ban
+║ ${prefix}bangroup
+║ ${prefix}bye
+║ ${prefix}join
+║ ${prefix}block
+║ ${prefix}unblock
+║ ${prefix}broadcast
+║
+╚════════════╝
+
+╔════⧫👥𝑮𝒓𝒐𝒖𝒑👥
+║
+║ ${prefix}promote
+║ ${prefix}demote
+║ ${prefix}revoke
+║ ${prefix}add
+║ ${prefix}remove
+║ ${prefix}tagall
+║ ${prefix}hidetag
+║ ${prefix}groupsetting
+║ ${prefix}grouplink
+║ ${prefix}setgcpp
+║ ${prefix}setname
+║ ${prefix}setdesc
+║ ${prefix}group
+║ ${prefix}nsfw
+║ ${prefix}welcome
+║
+╚════════════╝
+
+╔════⧫⛓️𝑨𝒏𝒕𝒊 𝑳𝒊𝒏𝒌⛓️
+║
+║ ${prefix}antilinkgc
+║ ${prefix}antilinktg
+║ ${prefix}antilinktt
+║ ${prefix}antilinkytch
+║ ${prefix}antilinkytvid
+║ ${prefix}antilinkig
+║ ${prefix}antilinkfb
+║ ${prefix}antilinktwit
+║ ${prefix}antilinkall
+║ ${prefix}antiwame
+║
+╚════════════╝
+
+╔════⧫🔎𝑺𝒆𝒂𝒓𝒄𝒉🔍
+║
+║ ${prefix}play
+║ ${prefix}song
+║ ${prefix}yts
+║ ${prefix}lyrics
+║ ${prefix}google
+║ ${prefix}playstore
+║ ${prefix}gimage
+║ ${prefix}pinterest
+║ ${prefix}image
+║ ${prefix}movie
+║ ${prefix}wallpaper
+║ ${prefix}searchgc
+║ ${prefix}happymod
+║ ${prefix}wikimedia
+║ ${prefix}ringtone
+║ ${prefix}anime
+║ ${prefix}animestory
+║ ${prefix}manga
+║
+╚════════════╝
+
+╔════⧫⚙️𝑪𝒐𝒏𝒗𝒆𝒓𝒕⚙️
+║
+║ ${prefix}sticker
+║ ${prefix}toimg
+║ ${prefix}tovideo
+║ ${prefix}togif
+║ ${prefix}steal
+║ ${prefix}stickermeme
+║ ${prefix}emojimix
+║ ${prefix}tourl
+║ ${prefix}tomp3
+║ ${prefix}toaudio
+║
+╚════════════╝
+
+╔════⧫🔉𝑨𝒖𝒅𝒊𝒐🔉
+║
+║ ${prefix}bass
+║ ${prefix}tempo
+║ ${prefix}blown
+║ ${prefix}deep
+║ ${prefix}earrape
+║ ${prefix}fast
+║ ${prefix}fat
+║ ${prefix}nightcore
+║ ${prefix}reverse
+║ ${prefix}robot
+║ ${prefix}slow
+║ ${prefix}squirrel
+║
+╚════════════╝
+
+╔════⧫💥𝑹𝒆𝒂𝒄𝒕𝒊𝒐𝒏𝒔💥
+║
+║ ${prefix}bonk
+║ ${prefix}cry
+║ ${prefix}bully
+║ ${prefix}cuddle
+║ ${prefix}hug
+║ ${prefix}kiss
+║ ${prefix}lick
+║ ${prefix}pat
+║ ${prefix}smug
+║ ${prefix}yeet
+║ ${prefix}blush
+║ ${prefix}smile
+║ ${prefix}wave
+║ ${prefix}highfive
+║ ${prefix}handhold
+║ ${prefix}nom
+║ ${prefix}glomp
+║ ${prefix}bite
+║ ${prefix}slap
+║ ${prefix}kill
+║ ${prefix}happy
+║ ${prefix}wink
+║ ${prefix}poke
+║ ${prefix}dance
+║ ${prefix}cringe
+║
+╚════════════╝
+ 
+╔════⧫📥𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒓📥
+║
+║ ${prefix}play
+║ ${prefix}ytmp3
+║ ${prefix}ytmp4
+║ ${prefix}ytvideo
+║ ${prefix}mediafire
+║ ${prefix}instagram
+║ ${prefix}igtv
+║ ${prefix}facebook
+║ ${prefix}fbmp3
+║ ${prefix}twitter
+║ ${prefix}twittermp3
+║ ${prefix}tiktok
+║ ${prefix}tiktokaudio
+║ ${prefix}tiktoknowm
+║
+╚════════════╝
+ 
+╔════⧫☄️𝑾𝒆𝒆𝒃☄️
+║
+║ ${prefix}waifu
+║ ${prefix}loli
+║ ${prefix}neko
+║ ${prefix}ppcouple
+║ ${prefix}feed
+║ ${prefix}foxgirl
+║ ${prefix}meow
+║ ${prefix}tickle
+║ ${prefix}wallpaper
+║ ${prefix}coffee
+║ ${prefix}animenom
+║ ${prefix}waifu3
+║ ${prefix}neko2
+║ ${prefix}migumin
+║ ${prefix}awoo
+║ ${prefix}anime
+║ ${prefix}animewallpaper2
+║ ${prefix}manga
+║
+╚════════════╝
+ 
+╔════⧫📣𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒗𝒆📣
+║
+║ ${prefix}animequote
+║ ${prefix}quote
+║ ${prefix}covid
+║ ${prefix}earthquake
+║ ${prefix}wiki
+║
+╚════════════╝
+ 
+╔════⧫🦋𝑭𝒖𝒏🦋
+║
+║ ${prefix}reaction
+║ ${prefix}truth
+║ ${prefix}dare
+║ ${prefix}couple
+║ ${prefix}soulmate
+║ ${prefix}handsomecheck
+║ ${prefix}beautifulcheck
+║ ${prefix}awesomecheck
+║ ${prefix}greatcheck
+║ ${prefix}gaycheck
+║ ${prefix}cutecheck
+║ ${prefix}lesbiancheck
+║ ${prefix}hornycheck
+║ ${prefix}prettycheck
+║ ${prefix}lovelycheck
+║ ${prefix}uglycheck
+║ ${prefix}charactercheck
+║ ${prefix}quotes
+║ ${prefix}darkjoke
+║ ${prefix}stickermeme
+║
+╚════════════╝
+ 
+╔════⧫🐬𝑬𝒔𝒔𝒆𝒏𝒕𝒊𝒂𝒍/𝑶𝒕𝒉𝒆𝒓𝒔🐬
+║
+║ ${prefix}translate
+║ ${prefix}fliptext
+║ ${prefix}toletter
+║
+╚════════════╝
+ 
+╔════⧫🐾𝑵𝑺𝑭𝑾 🐾
+║
+║ 🍊 Type " *${prefix}nsfw* " then enable NSFW (Admin only!) 
+║
+║  🍑 Then type " *${prefix}nsfwmenu* " to get full list of NSFW commands.
+╚════════════╝
+/*
 
  *━━━━━━〈 🌸 Core 🌺 〉━━━━━━*
 
@@ -4797,6 +5036,7 @@ translate, fliptext, toletter
 
 🍑 Then type " *${prefix}nsfwmenu* " to get full list of NSFW commands.
 
+*/
 
 
 
