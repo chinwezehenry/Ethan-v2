@@ -2571,7 +2571,7 @@ if (isBanChat) return reply(mess.bangc)
      if (!isBotAdmins) return replay(mess.botadmin)
      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
      //if (!users.length)return replay(`please write the number of the person you want to add`)
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`✅Successfully Added!`)).catch((err) => replay(`cannot be added`))
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`✅Successfully Added!`)).catch((err) => replay(jsonformat(err)))
      }
      break
 
