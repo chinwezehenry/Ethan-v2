@@ -5066,10 +5066,9 @@ default:
 
     })
 }
-*/
   
   try {  
-  let miku = isQuotedTag && isGroup || !isGroup
+  let miku = isQuotedTag && isGroup || !isGroup;
     if(budy && !icmd && miku) {
             let fetchk = require("node-fetch");
             var textuser = m.text
@@ -5089,6 +5088,7 @@ default:
 		}
 //Credit to Secktor-Md
 
+*/
 
 if (budy.startsWith('=>')) {
 if (!isCreator) return reply(mess.botowner)
