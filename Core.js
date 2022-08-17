@@ -2449,6 +2449,26 @@ if (isBanChat) return reply(mess.bangc)
  }
  break
 
+
+ case "pp":
+      case "setbotpp":
+        {
+          if (!isCreator) return replay(mess.botowner);
+          if (!quoted)
+            return replay(`Send/Reply Image With Caption ${prefix}setbotpp`);
+          if (!/image/.test(mime))
+          return replay(`Send/Reply Image With Caption ${prefix}setbotpp`);
+          if (/webp/.test(mime))
+          return replay(`Send/Reply Image With Caption ${prefix}setbotpp`);
+          let media = await Miku.downloadAndSaveMediaMessage(quoted);
+          await Miku.updateProfilePicture(botNumber, {
+            url: media,
+          }).catch((err) => fs.unlinkSync(media));
+          replay(mess.jobdone);
+        }
+         break;
+
+
  case 'tag': case 'tagall': case 'all':{
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
@@ -4771,6 +4791,7 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}block
 ║ ${prefix}unblock
 ║ ${prefix}broadcast
+║ ${prefix}setbotpp
 ║
 ╚════════════╝
 
