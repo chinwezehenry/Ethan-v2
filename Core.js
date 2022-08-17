@@ -2656,6 +2656,26 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
+
+
+     case "eval": case "run": case "terminal":
+          {
+          if (!isCreator) return replay(mess.botowner);
+          if (args.length === 0) {
+            replay(`😃 Provide me with a query to run Master!`);
+            return;
+          }
+          try {
+            let resultTest = eval(q);
+            if (typeof resultTest === "object")
+              replay(JSON.stringify(resultTest));
+            else replay(resultTest.toString());
+          } catch (err) {
+            replay(err.toString());
+          }
+  }
+  break;
+
   
      case 'volume': {
         if (isBan) return reply(mess.banned)	 			
@@ -4792,6 +4812,7 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}unblock
 ║ ${prefix}broadcast
 ║ ${prefix}setbotpp
+║ ${prefix}eval
 ║
 ╚════════════╝
 
