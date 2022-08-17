@@ -4986,19 +4986,12 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
  🎐 Type " *${prefix}help* " to get full command list.`
 
 
-     let botn = [{
-    quickReplyButton: {
-    displayText: '🧧Commands🧧',
-    id: '!menu'
-    }  
-    }, {
-    quickReplyButton: {
-    displayText: '🎀Owner🎀',
-    id: '!owner'
-    }
-    }]
-    Miku.send5ButImg(`${global.BotName}`, BotLogo, botn)
-    }
+   let botn = [
+   { buttonId: `!owner`, buttonText: { displayText: '🎀Owner🎀' }, type: 1 },
+   { buttonId: `!script`, buttonText: { displayText: '🧧Script🧧' }, type: 1 }
+   ]
+   await Miku.sendButtonText(m.chat, botn, `${helpmenu}`, `${global.BotName}`, m)
+   }
 
 /*     
  let buttonshelpm = [
