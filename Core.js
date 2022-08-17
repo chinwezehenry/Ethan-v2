@@ -5068,14 +5068,26 @@ default:
 }
 */
   
-  if (!icmd&&!isGroup){
-	         await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${body}]`)
-        .then((response) => {
-                 txt = `${response.data.cnt}`
-
-                Miku.sendMessage(txt);
-    })
-}
+  try {  
+  let miku = isQuotedTag && isGroup || !isGroup
+    if(budy && !icmd && miku) {
+            let fetchk = require("node-fetch");
+            var textuser = m.text
+            console.log(textuser)
+              let fetchtext = await fetchk(
+              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
+            );
+            let json = await fetchtext.json();
+            console.log(json)
+            let { cnt } = json;
+            m.reply(cnt);
+            return;
+          }
+         
+} catch (err) {
+			console.log(err)
+		}
+//Credit to Secktor-Md
 
 
 if (budy.startsWith('=>')) {
