@@ -4985,15 +4985,15 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 
  🎐 Type " *${prefix}help* " to get full command list.`
 
-
+/*
    let botn = [
    { buttonId: `!owner`, buttonText: { displayText: '🎀Owner🎀' }, type: 1 },
    { buttonId: `!script`, buttonText: { displayText: '🧧Script🧧' }, type: 1 }
    ]
    await Miku.sendButtonText(m.chat, botn, `${helpmenu}`, `${global.BotName}`, m)
    }
-
-/*     
+*/
+     
  let buttonshelpm = [
     {buttonId: `!owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
     ]
@@ -5005,7 +5005,6 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
                     headerType: 4
                 }
             Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-*/
                 }
 break
 
