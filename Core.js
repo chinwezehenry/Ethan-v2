@@ -2571,7 +2571,7 @@ if (isBanChat) return reply(mess.bangc)
      if (!isBotAdmins) return replay(mess.botadmin)
      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
      if (!users.length)return replay(`please write the number of the person you want to add`)
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`✅Successfully Added!`)).catch((err) => replay(`Unable to add user for some reason 😾`))
+      await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`✅Successfully Added!`)).catch((err) => replay(jsonformat(err)))
      }
      break
 
@@ -4984,7 +4984,23 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
  🎐 To get Support Group link type " *${prefix}support* ".
 
  🎐 Type " *${prefix}help* " to get full command list.`
-     
+
+
+     let botn = [{
+    quickReplyButton: {
+    displayText: '🧧Commands🧧',
+    id: '!menu'
+    }  
+    }, {
+    quickReplyButton: {
+    displayText: '🎀Owner🎀',
+    id: '!owner'
+    }
+    }]
+    Miku.send5ButImg(`${global.BotName}`, BotLogo, botn)
+    }
+
+/*     
  let buttonshelpm = [
     {buttonId: `!owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
     ]
@@ -4996,6 +5012,7 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
                     headerType: 4
                 }
             Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+*/
                 }
 break
 
