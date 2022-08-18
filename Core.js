@@ -1532,6 +1532,18 @@ case 'repo': case 'botrepo':
     reply(`*My Fork Source Code:* https://github.com/jayjay-ops/Ethan-v2`)
     break
 
+case 'ethan': case 'about': {
+          if (isBan) return replay(mess.banned)
+          await Miku.sendMessage(
+            M.sender.jid,
+            `*❗🄴🅃🄷🄰🄽-🄱🄾🅃*\n\n *📮【About】:* 𝑨𝒖𝒕𝒐𝒎𝒂𝒕𝒆𝒅 𝑯𝒆𝒍𝒑𝒇𝒖𝒍/𝑭𝒖𝒏 𝑩𝒐𝒕 𝒕𝒐 𝒎𝒂𝒌𝒆 𝒍𝒊𝒇𝒆 𝒆𝒂𝒔𝒊𝒆𝒓 𝒐𝒏 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑\n\n*🏅【Support】:* https://www.instagram.com/jayjay_ops\n\n*🛸【Group】:* http://gg.gg/MikuSupport \n`,
+            MessageType.text
+        )
+        return void replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
+    }
+    break
+
+
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
