@@ -773,7 +773,7 @@ Miku.sendMessage(from, {text:`\`\`\`「 'wa.me' PM link Detected! 」\`\`\`\n\n@
 if (antiVirtex) {
     if (budy.length > 3500) {
     reply(`*Caution!*\n\n`.repeat(300))
-    reply(`\`\`\`Virus Detected !!\`\`\`\n\nRevoving sender...`)
+    reply(`\`\`\`Virus Detected !!\`\`\`\n\nRemoving sender...`)
     if (!isBotAdmins) return reply(mess.botAdmin)
     Miku.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     }
@@ -1534,12 +1534,12 @@ case 'repo': case 'botrepo':
 
 case 'ethan': case 'about': {
           if (isBan) return replay(mess.banned)
-          await Miku.sendMessage(
-            M.sender.jid,
+          await Miku.sendMessage(m.chat, 
+            [m.sender.jid],
             `*❗🄴🅃🄷🄰🄽-🄱🄾🅃*\n\n *📮【About】:* 𝑨𝒖𝒕𝒐𝒎𝒂𝒕𝒆𝒅 𝑯𝒆𝒍𝒑𝒇𝒖𝒍/𝑭𝒖𝒏 𝑩𝒐𝒕 𝒕𝒐 𝒎𝒂𝒌𝒆 𝒍𝒊𝒇𝒆 𝒆𝒂𝒔𝒊𝒆𝒓 𝒐𝒏 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑\n\n*🏅【Support】:* https://www.instagram.com/jayjay_ops\n\n*🛸【Group】:* http://gg.gg/MikuSupport \n`,
-            m.text
+            m.text, m
         )
-        await replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
+        return void replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
     }
     break
 
