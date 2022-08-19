@@ -1534,11 +1534,11 @@ case 'repo': case 'botrepo':
 
 case 'ethan': case 'about': {
           if (isBan) return replay(mess.banned)
-          await Miku.sendMessage(from, 
+          await Miku.sendMessage(`${m.sender}`, 
             {text: `*❗🄴🅃🄷🄰🄽-🄱🄾🅃*\n\n *📮【About】:* 𝑨𝒖𝒕𝒐𝒎𝒂𝒕𝒆𝒅 𝑯𝒆𝒍𝒑𝒇𝒖𝒍/𝑭𝒖𝒏 𝑩𝒐𝒕 𝒕𝒐 𝒎𝒂𝒌𝒆 𝒍𝒊𝒇𝒆 𝒆𝒂𝒔𝒊𝒆𝒓 𝒐𝒏 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑\n\n*🏅【Support】:* https://www.instagram.com/jayjay_ops\n\n*🛸【Group】:* http://gg.gg/MikuSupport \n`},
             { quoted: m }
         )
-       // return replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
+        return replay(`🧧 𝐒𝐞𝐧𝐭 𝐲𝐨𝐮 𝐭𝐡𝐞 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐢𝐧𝐟𝐨 𝐢𝐧 𝐩𝐞𝐫𝐬𝐨𝐧𝐚𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 🧧`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
     }
     break
 
