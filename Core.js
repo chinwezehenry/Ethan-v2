@@ -1538,10 +1538,38 @@ case 'ethan': case 'about': {
             {text: `*❗🄴🅃🄷🄰🄽-🄱🄾🅃*\n\n *📮【About】:* 𝑨𝒖𝒕𝒐𝒎𝒂𝒕𝒆𝒅 𝑯𝒆𝒍𝒑𝒇𝒖𝒍/𝑭𝒖𝒏 𝑩𝒐𝒕 𝒕𝒐 𝒎𝒂𝒌𝒆 𝒍𝒊𝒇𝒆 𝒆𝒂𝒔𝒊𝒆𝒓 𝒐𝒏 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑\n\n*🏅【Support】:* https://www.instagram.com/jayjay_ops\n\n*🛸【Group】:* http://gg.gg/MikuSupport \n`},
             { quoted: m }
         )
-        return replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
+       // return replay(`Sent you the support info in personal message`);   //.catch((reason: Error) => M.reply(`an error occurred, Reason: ${reason}`))
     }
     break
 
+case 'rules': case 'botrule': {
+          if (isBan) return replay(mess.banned)
+          mikupic ='https://wallpapercave.com/wp/wp10524580.jpg'
+          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ${global.botname} ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
+          let law = [
+                {buttonId: `!rules`, buttonText: {displayText: 'Rules'}, type: 1}
+                ]
+                let buttonMessage = {
+                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku.mp4'),gifPlayback:true,caption:rule},{quoted:m}),
+                    caption: rule,
+                    footer: `${global.BotName}`,
+                    buttons: butRun,
+                    headerType: 4
+                }
+            Miku.sendMessage(m.chat,buttonMessage,{quoted:m})
+    }
+    break
+
+/*
+case 'rules': case 'botrule': {
+          if (isBan) return replay(mess.banned)
+          await Miku.sendMessage(from, 
+            {text:  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ${global.botname} ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 ` },
+            { quoted: m }
+        )
+    }
+    break
+*/
 
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
@@ -4808,6 +4836,8 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}support
 ║ ${prefix}repo
 ║ ${prefix}script
+║ ${prefix}ethan
+║ ${prefix}rules
 ║
 ╚════════════╝ 
 
