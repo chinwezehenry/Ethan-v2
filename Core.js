@@ -1529,7 +1529,7 @@ case 'support': case 'supportgc':
 
 case 'repo': case 'botrepo':
     
-    reply(`*My Fork Source Code:* https://github.com/jayjay-ops/Ethan-v2`)
+    reply(`*❛ Source Code of top bot ❜* \n\n\n_Miku ➻ https://github.com/FantoX001/Miku-MD_\n\n_Sector ➻ https://github.com/SecktorBot/Secktor-Md_\n\n_Ethan-v2 ➻ https://github.com/jayjay-ops/Ethan-v2_\n\n\n*Hosting Tutorial ~ https://youtu.be/fZdM7Ahb4JE*`)
     break
 
 case 'ethan': case 'about': {
@@ -1545,7 +1545,7 @@ case 'ethan': case 'about': {
 case 'rules': case 'botrule': {
           if (isBan) return replay(mess.banned)
           mikupic ='https://wallpapercave.com/wp/wp10524580.jpg'
-          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ${global.botname} ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
+          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
           let law = [
                 {buttonId: `!rules`, buttonText: {displayText: 'Rules'}, type: 1}
                 ]
@@ -1560,16 +1560,12 @@ case 'rules': case 'botrule': {
     }
     break
 
-/*
-case 'rules': case 'botrule': {
-          if (isBan) return replay(mess.banned)
-          await Miku.sendMessage(from, 
-            {text:  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ${global.botname} ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 ` },
-            { quoted: m }
-        )
+
+case 'hi': case 'hello': {
+          replay(`Don't be scared, i am still active 😁`)
     }
     break
-*/
+
 
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
@@ -4838,6 +4834,7 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}script
 ║ ${prefix}ethan
 ║ ${prefix}rules
+║ ${prefix}hello|hi
 ║
 ╚════════════╝ 
 
