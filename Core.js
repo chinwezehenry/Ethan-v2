@@ -2630,22 +2630,21 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
-/*
+
 
      case 'song': case 'jam': {
          if (isBan) return reply(mess.banned);	 			
    if (isBanChat) return reply(mess.bangc)
    let yts = require("yt-search")
    let search = await yts(text)
-   if (!args) return replay('🔎 Provide a search term')
-        const term = args.trim()
+   if (!text) return replay('🔎 Provide a search term')
+        const term = text.trim()
         const { videos } = await yts(term)
         if (!videos || videos.length <= 0) return replay(`⚓ No Matching videos found for the term : *${term}*`)
         const audio = new YT(videos[0].url, 'audio')
         if (!audio.url) return
         replay('👾 Sending...')
-        Miku
-            .sendMessage(m.chat, await audio.getBuffer(), mimetype: 'audio/mp4', {
+        Miku.sendMessage(m.chat, { audio: { url: args[0] }, mimetype: 'audio/mp4', {
                 quoted: m,
                 contextInfo: {
                     externalAdReply: {
@@ -2661,8 +2660,6 @@ if (isBanChat) return reply(mess.bangc)
     }
     break
 
-
-*/
 
 
 
@@ -2921,7 +2918,7 @@ case 'tomp3': {
 break
 
 
-case 'togif': case 'getgif':{
+case 'togif': case 'convertgif':{
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.quoted) return reply('Reply Image')
