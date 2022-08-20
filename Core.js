@@ -2630,7 +2630,7 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
-
+/*
 
      case 'song': case 'jam': {
          if (isBan) return reply(mess.banned);	 			
@@ -2662,7 +2662,7 @@ if (isBanChat) return reply(mess.bangc)
     break
 
 
-
+*/
 
 
 
