@@ -2630,18 +2630,41 @@ if (isBanChat) return reply(mess.bangc)
      }
      break
 
-/*
 
-     case 'add':{     			
-        if (!m.isGroup) return replay(mess.grouponly)
-     if (!isBotAdmins) return replay(mess.botadmin)
-     let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-     if (!users.length)return replay(`please write the number of the person you want to add`)
-      await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`✅ Successfully Added!`)).catch((err) => replay(jsonformat(err)))
-     }
-     break
 
-*/
+     case 'song': case 'jam': {
+         if (isBan) return reply(mess.banned);	 			
+   if (isBanChat) return reply(mess.bangc)
+   let yts = require("yt-search")
+   let search = await yts(text)
+   if (!args) return replay('🔎 Provide a search term')
+        const term = args.trim()
+        const { videos } = await yts(term)
+        if (!videos || videos.length <= 0) return replay(`⚓ No Matching videos found for the term : *${term}*`)
+        const audio = new YT(videos[0].url, 'audio')
+        if (!audio.url) return
+        replay('👾 Sending...')
+        Miku
+            .sendMessage(m.chat, await audio.getBuffer(), mimetype: 'audio/mp4', {
+                quoted: m,
+                contextInfo: {
+                    externalAdReply: {
+                        title: videos[0].title.substr(0, 30),
+                        body: `author : ${videos[0].author.name.substr(0, 20)}\nSent Via : Ethan`,
+                        mediaType: 2,
+                        thumbnailUrl: `https://i.ytimg.com/vi/${audio.id}/hqdefault.jpg`,
+                        mediaUrl: audio.url
+                    }
+                }
+            })
+            .catch((err) => replay(`❌ an error occurred, Reason: ${reason}`))
+    }
+    break
+
+
+
+
+
 
      case 'remove':{
         if (isBan) return reply(mess.banned)	 			
@@ -3386,7 +3409,7 @@ reply("Error link!")
 }
 break
 
-case 'music': case 'play': case 'song': case 'ytplay': {
+case 'music': case 'play': case 'ytplay': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let yts = require("yt-search")
