@@ -2632,31 +2632,26 @@ if (isBanChat) return reply(mess.bangc)
 
 
 
-     case 'song': case 'jam': {
-         if (isBan) return reply(mess.banned);	 			
-   if (isBanChat) return reply(mess.bangc)
-   let yts = require("yt-search")
-   let search = await yts(text)
-   if (!text) return replay('🔎 Provide a search term')
-        const term = text.trim()
-        const { videos } = await yts(term)
-        if (!videos || videos.length <= 0) return replay(`⚓ No Matching videos found for the term : *${term}*`)
-        const audio = new YT(videos[0].url, 'audio')
-        if (!audio.url) return
-        replay('👾 Sending...')
-        Miku.sendMessage(m.chat, { audio: { url: args[0] }, mimetype: 'audio/mp4', {
-                quoted: m,
-                contextInfo: {
-                    externalAdReply: {
-                        title: videos[0].title.substr(0, 30),
-                        body: `author : ${videos[0].author.name.substr(0, 20)}\nSent Via : Ethan`,
-                        mediaType: 2,
-                        thumbnailUrl: `https://i.ytimg.com/vi/${audio.id}/hqdefault.jpg`,
-                        mediaUrl: audio.url
-                    }
-                }
-            })
-            .catch((err) => replay(`❌ an error occurred, Reason: ${reason}`))
+     case  'song': case 'jam': {
+	if (isBan) return reply(mess.banned);	 			
+     if (isBanChat) return reply(mess.bangc)
+     if (!text) return replay(`🔎 Provide a search term'`)
+     let yts = require("yt-search")
+     let { yta  } = require('./lib/y2mate')
+     replay(`👾 Sending ${text}...`)
+        let search = await yts(text)
+        let quality = args[1] ? args[1] : '128kbps'
+        let media = await yta(search.all[0].url, quality)
+	    Miku.sendMessage(m.chat, { audio: { url: media.dl_link }, contextInfo: {
+                        externalAdReply: {
+                            title: search.all[0].title.substr(0, 30),
+                            body: `author : ${search.all[0].author.name.substr(0, 20)}`,
+                            mediaType: 2,
+                            thumbnail: await getBuffer(`https://i.ytimg.com/vi/${search.all[0].videoId}/hqdefault.jpg`),
+                            mediaUrl: media.url
+                        }
+                    }, mimetype: 'audio/mpeg', fileName: `${search.all[0].title}.mp3` }, { quoted: m})
+	
     }
     break
 
