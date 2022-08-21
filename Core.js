@@ -723,10 +723,21 @@ user.afkReason = ''
 }
 
 
+if (!m.isGroup){
+    linkgce = await Miku.groupInviteCode(from)
+    if (budy.includes(`https://chat.whatsapp.com/${linkgce}`) ||  m.mtype === 'groupInviteMessage')
+    await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him.`},  { quoted: m })
+}
+
+
+/*
+
 if (m.mtype === 'groupInviteMessage') {
 teks = `I can't join the group untill my *Owner* ask me to join. Type *-owner* to get owner number and ask him.`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./Assets/pic10.jpg'), `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
+
+*/
 
 
 if (AntiLink) {
