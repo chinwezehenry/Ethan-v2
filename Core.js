@@ -724,8 +724,7 @@ user.afkReason = ''
 
 
 if (!m.isGroup){
-    linkgce = await Miku.groupInviteCode(from)
-    if (budy.includes(`https://chat.whatsapp.com/${linkgce}`))  //m.mtype === 'groupInviteMessage'
+    if (budy.includes(`https://chat.whatsapp.com/`))  //m.mtype === 'groupInviteMessage'
     await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him.`},  { quoted: m })
 }
 
