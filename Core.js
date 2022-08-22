@@ -729,6 +729,7 @@ if (!m.isGroup){
   }
 }
 
+/*
 
 if (!m.isGroup){
     if (budy.includes(`https://chat.whatsapp.com/`)){
@@ -736,7 +737,7 @@ if (!m.isGroup){
   }
 }
 
-/*
+
 
 if (m.mtype === 'groupInviteMessage') {
 teks = `I can't join the group untill my *Owner* ask me to join. Type *-owner* to get owner number and ask him.`
