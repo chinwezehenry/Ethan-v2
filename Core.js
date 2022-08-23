@@ -5177,7 +5177,7 @@ default:
 
   case 'bot': case 'chat': {
 				        if (!q) return m.reply(`*Yes, you called me ${pushname}*`)
-        await axios.get(`http://api.brainshop.ai/get?bid=168545&key=doAEfxaknlRYznuf&uid=[uid]&msg=[q]`)
+        await axios.get(`http://api.brainshop.ai/get?bid=168545&key=doAEfxaknlRYznuf&uid=[uid]&msg=[budy]`)
         .then((response) => {
                 // console.log(response);
                 const txt = ` *👤 Ethan*:  ${response.data.cnt}`
