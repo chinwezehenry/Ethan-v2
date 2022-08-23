@@ -238,15 +238,7 @@ const isImage = (m.type === 'imageMessage')
         const isQuotedProd = m.mtype === 'extendedTextMessage' && content.includes('productMessage')
         const isQuotedReply = m.mtype === 'extendedTextMessage' && content.includes('Message')
 
-/*
-if (!isCmd && !m.isGroup){
-    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
-    .then((response) => {
-    txt = `${response.data.cnt}`
-    m.reply(txt)
-    }
-}
-*/
+
 
 _sewa.expiredCheck(Miku, sewa)
 
@@ -5198,17 +5190,19 @@ default:
 }
 break
 
-/*				
+				
   if (!isCmd && !isGroup){
-    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
+    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
 .then((response) => {
-        txt = `${response.data.cnt}`
+        const txt = `${response.data.cnt}`
 
        m.reply(txt);
 
     })
 }
   
+
+/*
   try {  
   let miku = isQuotedTag && isGroup || !isGroup;
     if(budy && !icmd && miku) {
