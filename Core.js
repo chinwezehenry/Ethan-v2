@@ -5192,7 +5192,7 @@ break
 
 				
   if (!isCmd && !isGroup){
-    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
+    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
 .then((response) => {
         const txt = `${response.data.cnt}`
 
