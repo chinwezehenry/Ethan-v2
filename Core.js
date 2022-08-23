@@ -5165,15 +5165,8 @@ break
 
 default:
 
-/*
-    if (!isCmd && !isGroup){
-        const botreply = await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
-       txt = `${botreply.data.cnt}`
-       m.reply(txt)
 
-  }
-
-*/
+    
 
   Miku.sendMessage(m.chat, {
 					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *!𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
@@ -5181,6 +5174,20 @@ default:
 					quoted: m
 				})
 
+
+  case 'bot': case 'chat': {
+				        if (!q) return m.reply(' *Yes, you called me ${pushname}!* ')
+        await axios.get(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
+        .then((response) => {
+                // console.log(response);
+                const txt = ` *👤 Ethan*:  ${response.data.success}`
+                m.reply(txt);
+            }).catch(err => {
+                m.reply(`Sorry ${packname} I did not get you`)
+           }
+      )
+}
+break
 
 /*				
   if (!isCmd && !isGroup){
