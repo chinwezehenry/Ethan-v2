@@ -238,7 +238,7 @@ const isImage = (m.type === 'imageMessage')
         const isQuotedProd = m.mtype === 'extendedTextMessage' && content.includes('productMessage')
         const isQuotedReply = m.mtype === 'extendedTextMessage' && content.includes('Message')
 
-
+/*
 if (!isCmd && !m.isGroup){
     await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
     .then((response) => {
@@ -246,7 +246,7 @@ if (!isCmd && !m.isGroup){
     m.reply(txt)
     }
 }
-
+*/
 
 _sewa.expiredCheck(Miku, sewa)
 
