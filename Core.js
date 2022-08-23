@@ -732,9 +732,10 @@ if (!m.isGroup){
 
 
 if (!m.isGroup){
-    if (m.mtype === 'groupInviteCode'){
-    await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him.`},  { quoted: m })
-  }
+    let urls = 'chat.whatsapp.com'
+     if (budy.includes(urls)){
+          await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him.`},  { quoted: m })
+     }
 }
 
 /*
