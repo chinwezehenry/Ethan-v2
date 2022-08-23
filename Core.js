@@ -723,14 +723,14 @@ user.afkReason = ''
 }
 
 
-if (!m.isGroup){
+if (!m.isGroup && !isCreator){
     if (m.mtype === 'groupInviteMessage'){
     await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
   }
 }
 
 
-if (!m.isGroup){
+if (!m.isGroup && !isCreator){
     let urls = 'https://chat.whatsapp.com/'
      if (budy.includes(urls)){
           await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
