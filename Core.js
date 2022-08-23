@@ -177,7 +177,7 @@ var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == '
 var budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = global.prefa
 const isCmd = body.startsWith(prefix)
-const notCmd = body.startsWith(prefix)
+const notCmd = body.startsWith('')
 const command = isCmd ? body.slice(1).trim().split(' ')[0].toLowerCase() : ''
 const args = body.trim().split(/ +/).slice(1)
 const pushname = m.pushName || "No Name"
@@ -241,9 +241,9 @@ const isImage = (m.type === 'imageMessage')
 
 
 if (!isCmd && !m.isGroup){
-    const botreply = await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
+    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${q}]`)
     .then((response) => {
-    txt = `${botreply.data.cnt}`
+    txt = `${response.data.cnt}`
     m.reply(txt)
     }
 }
