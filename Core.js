@@ -5191,14 +5191,16 @@ default:
 break
 
 				
-  if (!isCmd && !isGroup){
-    await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
-.then((response) => {
-        const txt = `${response.data.cnt}`
-
-       m.reply(txt);
-
-    })
+    if (!isGroup && !isCmd){
+        await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
+        .then((response) => {
+                // console.log(response);
+                const txt = ` ${response.data.cnt}`
+                m.reply(txt);
+            }).catch(err => {
+                m.reply(`Sorry, can you repeat yourself?`)
+           }
+      )
 }
   
 
