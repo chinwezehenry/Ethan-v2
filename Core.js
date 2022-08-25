@@ -5168,19 +5168,19 @@ default:
 
 
     
-
+/*
   Miku.sendMessage(m.chat, {
 					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *!𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
 				}, {
 					quoted: m
 				})
-
+*/
 
   case 'bot': case 'chat': {				    
         await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
         .then((response) => {
                 // console.log(response);
-                const txt = ` *👤 Ethan*:  ${response.data.cnt}`
+                const txt = `${response.data.cnt}`
                 m.reply(txt);
             }).catch(err => {
                 m.reply(`Sorry ${pushname} I did not get you`)
