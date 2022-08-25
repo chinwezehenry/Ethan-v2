@@ -5180,9 +5180,7 @@ default:
 */
 
 
-case 'bot': case 'chat': {
-        let miku = quoted && isGroup || !isGroup;
-   if(miku) {				    
+case 'bot': case 'chat': {       		    
        await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
        .then((response) => {
                // console.log(response);
@@ -5192,7 +5190,6 @@ case 'bot': case 'chat': {
               m.reply(`Sorry ${pushname} I did not get you`)
           }
       )
-   }
 }
 break
 
