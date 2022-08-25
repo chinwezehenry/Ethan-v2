@@ -1564,7 +1564,7 @@ case 'ethan': case 'about': {
 case 'rules': case 'botrule': {
           if (isBan) return replay(mess.banned)
           mikupic ='https://wallpapercave.com/wp/wp10524580.jpg'
-          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Chatting with ai chat bots will be available soon..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
+          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Use ${prefix}bot/chat to chat with ai chat bots..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
           let law = [
                 {buttonId: `!rules`, buttonText: {displayText: 'Rules'}, type: 1}
                 ]
@@ -5092,6 +5092,7 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}translate
 ║ ${prefix}fliptext
 ║ ${prefix}toletter
+║ ${prefix}bot|chat <text>
 ║
 ╚════════════╝
  
@@ -5181,7 +5182,7 @@ default:
 
 case 'bot': case 'chat': {
         let miku = quoted && isGroup || !isGroup;
-   if(budy && miku) {				    
+   if(miku) {				    
        await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
        .then((response) => {
                // console.log(response);
