@@ -57,7 +57,7 @@ const {
 } = require("dhn-api");
 
 
-*/
+
 
 
 
@@ -5178,21 +5178,23 @@ default:
 				})
 */
 
-  case 'bot': case 'chat': {
+
+case 'bot': case 'chat': {
         let miku = quoted && isGroup || !isGroup;
-       if(budy && miku) {				    
-        await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
-        .then((response) => {
-                // console.log(response);
-                const txt = `${response.data.cnt}`
-                m.reply(txt);
-            }).catch(err => {
-                m.reply(`Sorry ${pushname} I did not get you`)
+   if(budy && miku) {				    
+       await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
+       .then((response) => {
+               // console.log(response);
+              const txt = `${response.data.cnt}`
+              m.reply(txt);
+          }).catch(err => {
+              m.reply(`Sorry ${pushname} I did not get you`)
           }
       )
    }
 }
 break
+
 
 /*
   let miku = quoted && isGroup || !isGroup;
