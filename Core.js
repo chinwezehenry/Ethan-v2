@@ -5180,7 +5180,7 @@ default:
 */
 
 
-case quoted && isGroup || !isGroup: {       		    
+case 'chat': case 'bot': {       		    
        await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
        .then((response) => {
                // console.log(response);
@@ -5195,19 +5195,6 @@ break
 
 
 /*
-  let miku = quoted && isGroup || !isGroup;
-    if(budy && !isCmd && miku) {
-             await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
-        .then((response) => {
-                // console.log(response);
-                const ans = `${response.data.cnt}`
-                m.reply(ans);
-            }).catch(err => {
-                m.reply(`Sorry ${pushname} I did not get you`)
-            }
-        )
-    }
-//Credit to Secktor-Md
 
 
 				
