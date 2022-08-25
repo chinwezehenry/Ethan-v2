@@ -5189,7 +5189,7 @@ default:
 }
 break
 
-				
+/*				
     if (!isGroup && !isCmd){
         await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
         .then((response) => {
@@ -5203,15 +5203,17 @@ break
 }
   
 
-/*
-  try {  
+*/
+
+ try {  
   let miku = isQuotedTag && isGroup || !isGroup;
-    if(budy && !icmd && miku) {
+    if(budy && !isCmd && miku) {
             let fetchk = require("node-fetch");
             var textuser = m.text
             console.log(textuser)
               let fetchtext = await fetchk(
-              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
+              `http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${textuser}]`
+              //`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
             );
             let json = await fetchtext.json();
             console.log(json)
@@ -5225,7 +5227,7 @@ break
 		}
 //Credit to Secktor-Md
 
-*/
+
 
 if (budy.startsWith('=>')) {
 if (!isCreator) return reply(mess.botowner)
