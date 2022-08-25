@@ -47,7 +47,7 @@ const { hentai } = require('./lib/scraper2.js')
 let { msgFilter } = require('./lib/antispam')
 const { mediafireDl } = require('./lib/mediafire.js')
 
-/*
+
 // News api (DHN-api) //
 
 const {
@@ -4780,7 +4780,7 @@ reply(`
 break
 
 
-case "quotes":
+case "quotes": case "quote": {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
@@ -4790,15 +4790,17 @@ teks += `\n*Quotes:*\n`
 teks += `${res.quotes}\n`
 
 replay(teks)
+}
 break
 
-case "darkjoke":
+case "darkjoke": case "joke": {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
 var res = await Darkjokes()
 teks = "\nDarkjokes"
 Miku.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+}
 break
 
 case 'leavegc': case 'leavegroup': case 'bye': {
@@ -5176,7 +5178,9 @@ default:
 				})
 */
 
-  case 'bot': case 'chat': {				    
+  case 'bot': case 'chat': {
+        let miku = quoted && isGroup || !isGroup;
+       if(budy && miku) {				    
         await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
         .then((response) => {
                 // console.log(response);
@@ -5184,12 +5188,13 @@ default:
                 m.reply(txt);
             }).catch(err => {
                 m.reply(`Sorry ${pushname} I did not get you`)
-           }
+          }
       )
+   }
 }
 break
 
-
+/*
   let miku = quoted && isGroup || !isGroup;
     if(budy && !isCmd && miku) {
              await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
@@ -5205,7 +5210,7 @@ break
 //Credit to Secktor-Md
 
 
-/*				
+				
     if (!isGroup && !isCmd){
         await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
         .then((response) => {
