@@ -5189,6 +5189,22 @@ default:
 }
 break
 
+
+  let miku = quoted && isGroup || !isGroup;
+    if(budy && !isCmd && miku) {
+             await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
+        .then((response) => {
+                // console.log(response);
+                const ans = `${response.data.cnt}`
+                m.reply(ans);
+            }).catch(err => {
+                m.reply(`Sorry ${pushname} I did not get you`)
+            }
+        )
+    }
+//Credit to Secktor-Md
+
+
 /*				
     if (!isGroup && !isCmd){
         await axios.get(`http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${budy}]`)
@@ -5203,7 +5219,7 @@ break
 }
   
 
-*/
+
 
  try {  
   let miku = isQuotedTag && isGroup || !isGroup;
@@ -5227,7 +5243,7 @@ break
 		}
 //Credit to Secktor-Md
 
-
+*/
 
 if (budy.startsWith('=>')) {
 if (!isCreator) return reply(mess.botowner)
