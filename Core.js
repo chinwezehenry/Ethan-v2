@@ -43,7 +43,7 @@ const { jadwaltv }= require('./lib/jadwaltv');
 const { MikuTiktok } = require('./lib/tiktokmikudl');
 const maker = require('mumaker')
 const eco = require('discord-mongoose-economy')
-// const ty = eco.connect('mongodb+srv://jayjay-ops:jayjay-ops@cluster0.orjsg.mongodb.net/test');
+const ty = eco.connect('mongodb+srv://jayjay-ops:jayjay-ops@cluster0.orjsg.mongodb.net/test');
 const xfarrapi = require('xfarr-api')
 const { hentai } = require('./lib/scraper2.js')
 let { msgFilter } = require('./lib/antispam')
@@ -1580,6 +1580,28 @@ case 'rules': case 'botrule': {
             Miku.sendMessage(m.chat,buttonMessage,{quoted:m})
     }
     break
+
+
+
+//=============Economy===============
+
+
+case 'daily': case 'reward': {
+	if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
+	let user = m.mentioned[0] ? m.mentioned[0] : m.sender
+	const cara = "cara"
+	const daily  = await eco.daily(user, cara, 1000); //give 500 for daily, can be changed
+	
+	        if (daily.cd) return replay(`You already claimed daily for today, come back in ${daily.cdL}`); //cdL is already formatted cooldown Left
+	
+            replay(`you claimed 💎${daily.amount} for daily`);
+}
+break
+
+
+
+
+//-----------------------------------
 
 
 case 'hi': case 'hello': {
