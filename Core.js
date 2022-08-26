@@ -42,6 +42,7 @@ const ms = require('ms')
 const { jadwaltv }= require('./lib/jadwaltv');
 const { MikuTiktok } = require('./lib/tiktokmikudl');
 const maker = require('mumaker')
+const eco = require('discord-mongoose-economy')
 const xfarrapi = require('xfarr-api')
 const { hentai } = require('./lib/scraper2.js')
 let { msgFilter } = require('./lib/antispam')
