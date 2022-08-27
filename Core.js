@@ -42,6 +42,7 @@ const ms = require('ms')
 const { jadwaltv }= require('./lib/jadwaltv');
 const { MikuTiktok } = require('./lib/tiktokmikudl');
 const maker = require('mumaker')
+const fetch = require("node-fetch");
 const eco = require('discord-mongoose-economy')
 const ty = eco.connect('mongodb+srv://jayjay:jayjay@cluster0.39zfejm.mongodb.net/test');
 const xfarrapi = require('xfarr-api')
@@ -1586,6 +1587,39 @@ case 'rules': case 'botrule': {
 //=============Economy===============
 
 
+let checkon = on.env.CHATBOT;
+let checkquoted = isGroup && quoted || !isGroup
+  if(budy && !isCmd && checkquoted && checkon ==='onjdjd') {
+
+    let zx = text.length;
+          if (zx < 14) {
+            var diffuser = m.sender.split("@")[0];
+            let fetchk = require("node-fetch");
+            var textuser = budy
+            console.log(textuser)
+              let fetchtext = await fetchk(
+              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`
+            );
+            let json = await fetchtext.json();
+            console.log(json)
+            let { cnt } = json;
+            m.reply(cnt);
+            return;
+          }
+
+          if (!text && !quoted)
+            return Miku.sendMessage(
+              `Hey there! ${pushname}. How are you doing these days?`
+            );
+
+}
+
+
+
+
+
+
+/*
 case 'daily': case 'reward': {
 	if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
 	let user = m.mentioned[0] ? m.mentioned[0] : m.sender
@@ -1598,7 +1632,7 @@ case 'daily': case 'reward': {
 }
 break
 
-
+*/
 
 
 //-----------------------------------
