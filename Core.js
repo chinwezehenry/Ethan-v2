@@ -1587,27 +1587,21 @@ case 'rules': case 'botrule': {
 //=============Economy===============
 
 
-let checkquoted = isGroup && quoted || !isGroup
-  if(budy && !isCmd && checkquoted) {
-
-    let zx = text.length;
-          if (zx < 14) {
-            var diffuser = m.sender.split("@")[0];
-            let fetchk = require("node-fetch");
-            var textuser = budy
-            console.log(textuser)
-              let fetchtext = await fetchk(
-              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`
-            );
-            let json = await fetchtext.json();
-            console.log(json)
-            let { cnt } = json;
-            m.reply(cnt);
-            return;
-          }      
+let checkquoted = isGroup && quoted || !isGroup;
+  if(!isCmd && checkquoted) {
+     let chatbot = require('axios')
+     await chatbot(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
+       .then((response) => {
+               // console.log(response);
+              const txt = `${response.data.cnt}`
+              m.reply(txt);
+          }).catch(err => {
+              m.reply(`Sorry ${pushname} I did not get you`)
+          }
+      )
 }
 
-
+/*
 let ai = quoted && isGroup || !isGroup;
     if(budy && !isCmd && ai) {
             let fetchk = require("node-fetch");
@@ -1628,7 +1622,7 @@ let ai = quoted && isGroup || !isGroup;
 
 
 
-/*
+
 case 'daily': case 'reward': {
 	if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
 	let user = m.mentioned[0] ? m.mentioned[0] : m.sender
