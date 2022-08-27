@@ -1587,9 +1587,8 @@ case 'rules': case 'botrule': {
 //=============Economy===============
 
 
-let checkon = on.env.CHATBOT;
 let checkquoted = isGroup && quoted || !isGroup
-  if(budy && !isCmd && checkquoted && checkon ==='onjdjd') {
+  if(budy && !isCmd && checkquoted) {
 
     let zx = text.length;
           if (zx < 14) {
@@ -1605,17 +1604,27 @@ let checkquoted = isGroup && quoted || !isGroup
             let { cnt } = json;
             m.reply(cnt);
             return;
-          }
-
-          if (!text && !quoted)
-            return Miku.sendMessage(
-              `Hey there! ${pushname}. How are you doing these days?`
-            );
-
+          }      
 }
 
 
-
+let ai = quoted && isGroup || !isGroup;
+    if(budy && !isCmd && ai) {
+            let fetchk = require("node-fetch");
+            var textuser = budy
+            console.log(textuser)
+              let fetchtext = await fetchk(
+              `http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=2349026336891&msg=${textuser}]`
+              //`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
+            );
+            let json = await fetchtext.json();
+            console.log(json)
+            let { cnt } = json;
+            m.reply(cnt);
+            return;
+      }
+         
+//Credit to Secktor-Md
 
 
 
@@ -5267,33 +5276,11 @@ break
            }
       )
 }
-  
+*/  
 
 
 
- try {  
-  let miku = isQuotedTag && isGroup || !isGroup;
-    if(budy && !isCmd && miku) {
-            let fetchk = require("node-fetch");
-            var textuser = m.text
-            console.log(textuser)
-              let fetchtext = await fetchk(
-              `http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=[uid]&msg=${textuser}]`
-              //`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
-            );
-            let json = await fetchtext.json();
-            console.log(json)
-            let { cnt } = json;
-            m.reply(cnt);
-            return;
-          }
-         
-} catch (err) {
-			console.log(err)
-		}
-//Credit to Secktor-Md
 
-*/
 
 if (budy.startsWith('=>')) {
 if (!isCreator) return reply(mess.botowner)
