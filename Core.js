@@ -1588,9 +1588,8 @@ case 'rules': case 'botrule': {
 
 
 let checkquoted = isGroup && quoted || !isGroup;
-  if(budy && !isCmd && checkquoted) {
-     let chatbot = require('axios')
-     await chatbot.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
+  if(budy && !isCmd && checkquoted) {     
+     let chatbot = await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
        .then((response) => {
                // console.log(response);
               const txt = `${response.data.cnt}`
@@ -1624,8 +1623,7 @@ let ai = quoted && isGroup || !isGroup;
 
 
 case 'daily': case 'reward': {
-	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
-        if (m.quoted?.sender) {
+	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)    
 	//let user = m.mentioned[0] ? m.mentioned[0] : m.sender
         let user = m.sender
 	const cara = "cara"
@@ -1633,8 +1631,7 @@ case 'daily': case 'reward': {
 	
 	        if (daily.cd) return replay(`You already claimed daily for today, come back in ${daily.cdL}`); //cdL is already formatted cooldown Left
 	
-            replay(`you claimed 💎${daily.amount} for daily`);
-        }
+            replay(`you claimed 💎${daily.amount} for daily`);        
 }
 break
 
