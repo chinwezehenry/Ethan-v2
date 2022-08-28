@@ -1588,9 +1588,9 @@ case 'rules': case 'botrule': {
 
 
 let checkquoted = isGroup && quoted || !isGroup;
-  if(!isCmd && checkquoted) {
+  if(budy && !isCmd && checkquoted) {
      let chatbot = require('axios')
-     await chatbot(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
+     await chatbot.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
        .then((response) => {
                // console.log(response);
               const txt = `${response.data.cnt}`
@@ -1620,22 +1620,24 @@ let ai = quoted && isGroup || !isGroup;
          
 //Credit to Secktor-Md
 
-
+*/
 
 
 case 'daily': case 'reward': {
-	if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
-	let user = m.mentioned[0] ? m.mentioned[0] : m.sender
+	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
+        if (m.quoted?.sender) {
+	//let user = m.mentioned[0] ? m.mentioned[0] : m.sender
+        let user = m.sender
 	const cara = "cara"
-	const daily  = await eco.daily(user, cara, 1000); //give 500 for daily, can be changed
+	const daily  = await eco.daily(user, cara, 500); //give 500 for daily, can be changed
 	
 	        if (daily.cd) return replay(`You already claimed daily for today, come back in ${daily.cdL}`); //cdL is already formatted cooldown Left
 	
             replay(`you claimed 💎${daily.amount} for daily`);
+        }
 }
 break
 
-*/
 
 
 //-----------------------------------
