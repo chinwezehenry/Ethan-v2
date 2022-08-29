@@ -1589,7 +1589,7 @@ case 'rules': case 'botrule': {
 
 let checkquoted = isGroup && quoted || !isGroup;
   if(budy && !isCmd && checkquoted) {     
-     let chatbot = await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
+      await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
        .then((response) => {
                // console.log(response);
               const txt = `${response.data.cnt}`
@@ -1625,6 +1625,8 @@ let ai = quoted && isGroup || !isGroup;
 case 'daily': case 'reward': {
 	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)    
 	//let user = m.mentioned[0] ? m.mentioned[0] : m.sender
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
         let user = m.sender
 	const cara = "cara"
 	const daily  = await eco.daily(user, cara, 500); //give 500 for daily, can be changed
@@ -5240,7 +5242,8 @@ default:
 */
 
 
-case 'chat': case 'bot': {       		    
+case 'chat': case 'bot': { 
+     if (quoted) {      		    
        await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${q}]`)
        .then((response) => {
                // console.log(response);
@@ -5250,6 +5253,7 @@ case 'chat': case 'bot': {
               m.reply(`Sorry ${pushname} I did not get you`)
           }
       )
+   }
 }
 break
 
