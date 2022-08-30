@@ -1652,6 +1652,19 @@ break
 
 
 
+//---------------deposit--------------------
+
+case 'deposit':  case 'pay-in': {
+	if (!text) return replay(`Provide the amount you want to deposit! ${pushname}`)
+	let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+	const cara = "cara"
+	let value = text.trim();
+	const deposit = await eco.deposit(user, cara, value);
+	        if (deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
+	        reply(`Successfully Deposited 💎${deposit.amount} to your bank.`)
+}
+break
+
 
 
 
