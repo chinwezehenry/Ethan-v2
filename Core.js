@@ -1587,40 +1587,8 @@ case 'rules': case 'botrule': {
 //=============Economy===============
 
 
-let checkquoted = isGroup && quoted || !isGroup;
-  if(budy && !isCmd && checkquoted) {     
-      await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=${budy}]`)
-       .then((response) => {
-               // console.log(response);
-              const txt = `${response.data.cnt}`
-              m.reply(txt);
-          }).catch(err => {
-              m.reply(`Sorry ${pushname} I did not get you`)
-          }
-      )
-}
 
-/*
-let ai = quoted && isGroup || !isGroup;
-    if(budy && !isCmd && ai) {
-            let fetchk = require("node-fetch");
-            var textuser = budy
-            console.log(textuser)
-              let fetchtext = await fetchk(
-              `http://api.brainshop.ai/get?bid=165801&key=1ftAuFL7Fhj21Fyp&uid=2349026336891&msg=${textuser}]`
-              //`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=919628516236&msg=${textuser}`
-            );
-            let json = await fetchtext.json();
-            console.log(json)
-            let { cnt } = json;
-            m.reply(cnt);
-            return;
-      }
-         
-//Credit to Secktor-Md
-
-*/
-
+//--------------daily---------------------
 
 case 'daily': case 'reward': {
 	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)    
@@ -1639,7 +1607,58 @@ break
 
 
 
-//-----------------------------------
+//---------------bank-increase--------------------
+
+case 'capacity':  case 'bankupgrade': {
+	if (!isCreator) return replay(mess.botowner)
+	if (!text) return replay("💴 *Bank-capacity* 💳\n\n1 | *1000* = ¥100\n\n2 | *100000* = ¥1000\n\n3 | *10000000* = ¥10000000\n\nEx- /inc 1 OR /inc 1000")
+	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
+	let user = m.sender
+	const cara = "cara"
+	let value = text.trim();
+	let k = parseInt(value)
+	const balance  = await eco.balance(user, cara)
+  switch (value) {
+          case '1000':
+          case '1':
+          if (k > balance.wallet ) return replay("Check your wallet");
+            const deduct1 = await eco.deduct(user, cara, 100);
+            const add1 = eco.giveCapacity(user, cara, 1000); 
+                await replay(`1000 coins storage has been added in ${pushname} bank`)
+     
+                break
+          case '100000':
+          case '2':
+          if (k < balance.wallet) return replay("Check your wallet");
+            const deduct2 = await eco.deduct(user, cara, 1000);
+            const add2 = eco.giveCapacity(user, cara, 100000); 
+                await replay(`100000 coins storage has been added in ${pushname} bank`)
+     
+                break
+          case '10000000':
+          case '3':
+          if (k < balance.wallet) return replay("Check your wallet");
+             const deduct3 = await eco.deduct(user, cara, 10000);
+             const add3 = eco.giveCapacity(user, cara, 10000000); 
+                 await replay(`10000000 coins storage has been added in ${pushname} bank`)
+     
+               break
+  default:
+   await replay('*What are you trying to do*.')
+   
+   }
+
+}
+break
+
+
+
+
+
+
+
+
+//=======================================
 
 
 case 'hi': case 'hello': {
