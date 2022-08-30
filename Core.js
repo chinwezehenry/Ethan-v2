@@ -1611,9 +1611,8 @@ break
 
 case 'capacity':  case 'bankupgrade': {
 	if (!isCreator) return replay(mess.botowner)
-	if (!text) return replay("💴 *Bank-capacity* 💳\n\n1 | *1000* = ¥100\n\n2 | *100000* = ¥1000\n\n3 | *10000000* = ¥10000000\n\nEx- /inc 1 OR /inc 1000")
-	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)
-	let user = m.sender
+	if (!text) return replay("💴 *Bank-capacity* 💳\n\n1 | *1000* = ¥100\n\n2 | *100000* = ¥1000\n\n3 | *10000000* = ¥10000000\n\nEx- /inc 1 OR /inc 1000")	
+	let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net' : m.sender
 	const cara = "cara"
 	let value = text.trim();
 	let k = parseInt(value)
