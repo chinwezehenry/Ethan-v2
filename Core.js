@@ -1591,8 +1591,7 @@ case 'rules': case 'botrule': {
 //--------------daily---------------------
 
 case 'daily': case 'reward': {
-	//if (m.quoted?.sender) m.mentioned.push(m.quoted.sender)    
-	//let user = m.mentioned[0] ? m.mentioned[0] : m.sender
+	if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)	
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
         let user = m.sender
@@ -1612,7 +1611,8 @@ break
 case 'capacity':  case 'bankupgrade': {
 	if (!isCreator) return replay(mess.botowner)
 	if (!text) return replay("💴 *Bank-capacity* 💳\n\n1 | *1000* = ¥100\n\n2 | *100000* = ¥1000\n\n3 | *10000000* = ¥10000000\n\nEx- /inc 1 OR /inc 1000")	
-	let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+	if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 	const cara = "cara"
 	let value = text.trim();
 	let k = parseInt(value)
@@ -1656,7 +1656,8 @@ break
 
 case 'deposit':  case 'pay-in': {
 	if (!text) return replay(`Provide the amount you want to deposit! ${pushname}`)
-	let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+	if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 	const cara = "cara"
 	let value = text.trim();
 	const deposit = await eco.deposit(user, cara, value);
@@ -1707,39 +1708,6 @@ break
 
 
 
-
-/*
-case 'transfer':  case 'give': {
-	let value = text.trim().split(" ");
-	if (value[0] === "") return replay(`Use ${prefix}transfer 100 @user`);
-	const target =
-	                         m.quoted && m.mentioned.length === 0
-					? m.quoted.sender
-					: m.mentionedJid[0] || null;
-           if (!target || target === m.sender) return replay("what are you trying to do!")
-		  // if (m.quoted.sender && !m.mentioned.includes(m.quoted.sender)) m.mentioned.push(m.sender)
-        while (m.mentioned.length < 2) m.mentioned.push(m.sender)
-        const cara = "cara"
-        const user1 = m.sender
-        const user2 = target
-		           const word = value[0];
-		           const code = value[1];
-		let incor = parseInt(word)
-		if (!incor) return replay("check your text plz u r using the command in a wrong way")
-		
-		const balance = await eco.balance(user1, cara); 
-        let a = (balance.wallet) < parseInt(word)
-        //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
-        if(a == true) return replay("you dont have sufficient money to transfer");
-        
-        const deduct = await eco.deduct(user1, cara, value[0]);
-        const give = await eco.give(user2, cara, value[0]);
-        reply(`Transaction successful \n\n New Balance: ${balance.wallet}`)
-
-}
-break
-
-*/
 
 
 
