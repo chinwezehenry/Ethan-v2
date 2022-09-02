@@ -1800,115 +1800,113 @@ break
 
 
 case 'gamble':  case 'bet': {
-     const texts = text.trim().split(" ");
+	const texts = text.trim().split(" ");
 		if (texts[0] === "")
 			return replay(
 				`Example:  ${prefix}gamble 100 direction(left,right,center,up,down)`
 			);
-const opp = texts[1];// your value
-const value = texts[0].toLowerCase();
-if (!value) return replay("*Please, specify the amount you are gambling with!*");
-if (!opp) return replay("*Specify the direction you are betting on!*");
-let gg = parseInt(value)
-if (!gg) return replay("*Check your text please, You are using the command in a wrong way*")
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-const cara = 'cara'
-const balance = await eco.balance(user, cara); 
-let g = (balance.wallet) > parseInt(value)
-if(g == false) return void replay(`*You don't have sufficient 💎Dims to gamble with*`);
-let k = 50
-let a = (k) > parseInt(value)
-//Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
-if(a == true) return replay(`*Sorry ${pushname}, you can't gamble with less than 💎50*`);
-                //if(balance.wallet < value) return void M.reply('no enough money');
-const f = ["left", "right", "up", "down", "center"]
-const r = f[Math.floor(Math.random () * f.length)]
-switch (r) {
-  case 'right':
-  let right = [
-    {buttonId: `${right}`, buttonText: {displayText: '💸Right'}, type: 1}
-    ]
-                let buttonMessage = {
-                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
-                    caption: gaming,
-                    footer: `${pushname}`,
-                    buttons: down,
-                    headerType: 4
-                }
-            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-                }
-    break
-  case 'left':
-  let left = [
-    {buttonId: `${left}`, buttonText: {displayText: '💸Left'}, type: 1}
-    ]
-                let buttonMessage = {
-                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
-                    caption: gaming,
-                    footer: `${pushname}`,
-                    buttons: left,
-                    headerType: 4
-                }
-            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-                }
-    break
-  case 'center':
-  let center = [
-    {buttonId: `${center}`, buttonText: {displayText: '💸Center'}, type: 1}
-    ]
-                let buttonMessage = {
-                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
-                    caption: gaming,
-                    footer: `${pushname}`,
-                    buttons: center,
-                    headerType: 4
-                }
-            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-                }
-    break  
-  case 'up':
-  let up = [
-    {buttonId: `${up}`, buttonText: {displayText: '💸Up'}, type: 1}
-    ]
-                let buttonMessage = {
-                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
-                    caption: gaming,
-                    footer: `${pushname}`,
-                    buttons: up,
-                    headerType: 4
-                }
-            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-                }
-    break  
-  case 'down':
-  let down = [
-    {buttonId: `${down}`, buttonText: {displayText: '💸Down'}, type: 1}
-    ]
-                let buttonMessage = {
-                    file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
-                    caption: gaming,
-                    footer: `${pushname}`,
-                    buttons: down,
-                    headerType: 4
-                }
-            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
-                }
+    const opp = texts[1];// your value
+    const value = texts[0].toLowerCase();
+    if (!value) return replay("*Please, specify the amount you are gambling with!*");
+    if (!opp) return replay("*Specify the direction you are betting on!*");
+    let gg = parseInt(value)
+    if (!gg) return replay("*Check your text please, You are using the command in a wrong way*")
+    if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+    const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+    const cara = 'cara'
+    const balance = await eco.balance(user, cara); 
+    let g = (balance.wallet) > parseInt(value)
+    if(g == false) return replay(`*You don't have sufficient 💎Dims to gamble with*`);
+    let k = 50
+    let a = (k) > parseInt(value)
+   //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
+    if (a == true) return replay(`*Sorry ${pushname}, you can't gamble with less than 💎50*`);
+                //if(balance.wallet < value) return replay('no enough money');
+    const f = ["left", "right", "up", "down", "center"]
+    const r = f[Math.floor(Math.random () * f.length)]
+    switch (r) {
+       case 'right':
+       let right = [
+          {buttonId: `${right}`, buttonText: {displayText: '💸 Right'}, type: 1}
+          ]
+                      let buttonMessage = {
+                          file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
+                          caption: gaming,
+                          footer: `${pushname}`,
+                          buttons: down,
+                          headerType: 4
+                      }
+                  Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                      }
+          break
+        case 'left':
+        let left = [
+          {buttonId: `${left}`, buttonText: {displayText: '💸 Left'}, type: 1}
+          ]
+                      let buttonMessage = {
+                          file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
+                          caption: gaming,
+                          footer: `${pushname}`,
+                          buttons: left,
+                          headerType: 4
+                      }
+                  Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                      }
+          break
+        case 'center':
+        let center = [
+          {buttonId: `${center}`, buttonText: {displayText: '💸 Center'}, type: 1}
+          ]
+                      let buttonMessage = {
+                          file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
+                          caption: gaming,
+                          footer: `${pushname}`,
+                          buttons: center,
+                          headerType: 4
+                      }
+                  Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                      }
+          break 
+        case 'up':
+        let up = [
+          {buttonId: `${up}`, buttonText: {displayText: '💸 Up'}, type: 1}
+          ]
+                      let buttonMessage = {
+                          file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
+                          caption: gaming,
+                          footer: `${pushname}`,
+                          buttons: up,
+                          headerType: 4
+                      }
+                  Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                      }
+          break  
+        case 'down':
+        let down = [
+          {buttonId: `${down}`, buttonText: {displayText: '💸Down'}, type: 1}
+          ]
+                      let buttonMessage = {
+                          file: Miku.sendMessage(m.chat,{video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,caption:gaming},{quoted:m}),
+                          caption: gaming,
+                          footer: `${pushname}`,
+                          buttons: down,
+                          headerType: 4
+                      }
+                  Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                      }
   
-    break
-};
-if ( r == opp){
-const give = await eco.give(user, cara, value);
-replay(`*📈 You won 💎${value}*`)
-}else{
-const deduct = await eco.deduct(user, cara, value);
-replay(`*📉 *You lost 💎${value}*`)
-}
-
-
+          break
+    };
+    if ( r == opp){
+    const give = await eco.give(user, cara, value);
+    replay(`*📉 You won 💎${value}*`)
+    }else{
+    const deduct = await eco.deduct(user, cara, value);
+    replay(`*📈 You lost 💎${value}*`)
+    }       
+    
 }
 break
-
 
 
 
