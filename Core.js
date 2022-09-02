@@ -1779,6 +1779,22 @@ break
 
 
 
+//--------------withdraw---------------------
+
+case 'withdraw':  case 'withdrawal': {
+      if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+		if (!text) return replay("*Provide the amount you want to withdraw!*");
+		const query = text.trim();
+        const cara = 'cara'
+        const withdraw = await eco.withdraw(user, cara, query);
+        if(withdraw.noten) return replay('*🏧 Insufficient fund in bank*'); //if user states more than whats in his wallet
+        const add = eco.give(user, cara, query);
+          replay(`*ALERT >>*  _💎${withdraw.amount} has been added in your wallet._`)
+        
+}
+break
+
 
 
 
