@@ -1826,16 +1826,16 @@ case 'gamble':  case 'bet': {
     const r = f[Math.floor(Math.random () * f.length)]
     switch (r) {
        case 'right':
-               await Miku.sendMessage(m.chat, {video:fs.readFileSync('./system/miku2.mp4'), gifPlayback:true, caption: right},{quoted:m}),
+               await replay(`*You placed your bet *`)
           break
         case 'left':
-               await Miku.sendMessage(m.chat, {video:fs.readFileSync('./system/miku2.mp4'), gifPlayback:true, caption: left},{quoted:m}),
+               await replay(`*You placed your bet *`)
           break
         case 'up':
-               await Miku.sendMessage(m.chat, {video:fs.readFileSync('./system/miku2.mp4'), gifPlayback:true, caption: up},{quoted:m}),
+               await replay(`*You placed your bet *`)
           break 
         case 'down':
-               await Miku.sendMessage(m.chat, {video:fs.readFileSync('./system/miku2.mp4'), gifPlayback:true, caption: down},{quoted:m}),
+               await replay(`*You placed your bet *`)
           break  
     };
     if ( r == opp){
