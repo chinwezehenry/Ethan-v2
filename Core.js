@@ -1822,20 +1822,20 @@ case 'gamble':  case 'bet': {
    //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
     if (a == true) return replay(`*Sorry ${pushname}, you can't gamble with less than 50*`);
                 //if(balance.wallet < value) return replay('no enough money');
-    const f = ["left", "right", "up", "down", "center"]
+    const f = ["left", "right", "up", "down"]
     const r = f[Math.floor(Math.random () * f.length)]
     switch (r) {
        case 'right':
-               await replay(`*You placed your bet *`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ʀɪɢʜᴛ ➡️*`)
           break
         case 'left':
-               await replay(`*You placed your bet *`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ʟᴇғᴛ ⬅️*`)
           break
         case 'up':
-               await replay(`*You placed your bet *`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ᴜᴘ ⬆️*`)
           break 
         case 'down':
-               await replay(`*You placed your bet *`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ᴅᴏᴡɴ ⬇️*`)
           break  
     };
     if ( r == opp){
@@ -1848,7 +1848,6 @@ case 'gamble':  case 'bet': {
     
 }
 break
-
 
 
 
