@@ -1816,38 +1816,60 @@ case 'gamble':  case 'bet': {
     const cara = 'cara'
     const balance = await eco.balance(user, cara); 
     let g = (balance.wallet) > parseInt(value)
-    if(g == false) return replay(`*You don't have sufficient Dims to gamble with*`);
+    if(g == false) return replay(`*You don't have sufficient 💎 Diamond to gamble with*`);
     let k = 50
     let a = (k) > parseInt(value)
    //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
-    if (a == true) return replay(`*Sorry ${pushname}, you can't gamble with less than 50*`);
+    if (a == true) return replay(`*Sorry ${pushname}, you can't gamble with less than 💎50*`);
                 //if(balance.wallet < value) return replay('no enough money');
     const f = ["left", "right", "up", "down"]
     const r = f[Math.floor(Math.random () * f.length)]
+    let cor = (r == opp)
     switch (r) {
-       case 'right':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ʀɪɢʜᴛ ➡️*`)
+       case 'right':               
+               replay(`*You bet 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
+               if (cor){
+               const give = await eco.give(user, cara, value);
+               replay(`*📉 You won 💎${value}*`)
+               }else{
+               const deduct = await eco.deduct(user, cara, value);
+               replay(`*📈 You lost 💎${value}*`)
+               }
           break
         case 'left':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ʟᴇғᴛ ⬅️*`)
+               replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
+               if (cor){
+               const give = await eco.give(user, cara, value);
+               replay(`*📉 You won 💎${value}*`)
+               }else{
+               const deduct = await eco.deduct(user, cara, value);
+               replay(`*📈 You lost 💎${value}*`)
+               }
           break
         case 'up':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ᴜᴘ ⬆️*`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
+               if (cor){
+               const give = await eco.give(user, cara, value);
+               replay(`*📉 You won 💎${value}*`)
+               }else{
+               const deduct = await eco.deduct(user, cara, value);
+               replay(`*📈 You lost 💎${value}*`)
+               }
           break 
         case 'down':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction\n\n『💯 Correct 』➣ ᴅᴏᴡɴ ⬇️*`)
+               return replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
+               if (cor){
+               const give = await eco.give(user, cara, value);
+               replay(`*📉 You won 💎${value}*`)
+               }else{
+               const deduct = await eco.deduct(user, cara, value);
+               replay(`*📈 You lost 💎${value}*`)
+               }
           break  
-    };
-    if ( r == opp){
-    const give = await eco.give(user, cara, value);
-    replay(`*📉 You won 💎${value}*`)
-    }else{
-    const deduct = await eco.deduct(user, cara, value);
-    replay(`*📈 You lost 💎${value}*`)
-    }       
     
 }
 break
+
 
 
 
