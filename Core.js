@@ -1757,7 +1757,7 @@ case 'rob':  case 'attack': {
             case 'ran':
                     await replay ('*your victim escaped, no lost nor gain.*')
                break
-            case 'rob':
+            case 'rob': 
                     const deduct1 = await eco.deduct(user1, cara, balance2.wallet);
                     const give = await eco.give(user2, cara, balance2.wallet);
                     await replay(`*Robbery operation successfully. Your new balance is 💎${balance2.wallet}*`)
@@ -1824,15 +1824,25 @@ case 'gamble':  case 'bet': {
                 //if(balance.wallet < value) return replay('no enough money');
     const f = ["left", "right", "up", "down"]
     const r = f[Math.floor(Math.random () * f.length)]
+    if ( r == opp){
+    const give = await eco.give(user , cara, value);
+    replay(`*📉 You won 💎${value}*`)
+    }else{
+    const deduct = await eco.deduct(user, cara, value);
+    replay(`*📈 You lost 💎${value}*`)
+    }       
+     
+
+/*
     let cor = (r == opp)
     switch (r) {
        case 'right':               
                replay(`*You bet 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
                if (cor)
-               const give = await eco.give(user, cara, value);
-               replay(`*📉 You won 💎${value}*`)               
-               const deduct = await eco.deduct(user, cara, value);
-               replay(`*📈 You lost 💎${value}*`)               
+                  const give = await eco.give(user, cara, value);
+                  replay(`*📉 You won 💎${value}*`)               
+                  const deduct = await eco.deduct(user, cara, value);
+                  replay(`*📈 You lost 💎${value}*`)               
           break
         case 'left':
                replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
@@ -1858,7 +1868,8 @@ case 'gamble':  case 'bet': {
                const deduct = await eco.deduct(user, cara, value);
                replay(`*📈 You lost 💎${value}*`)               
           break  
-    
+*/   
+
 }
 break
 
