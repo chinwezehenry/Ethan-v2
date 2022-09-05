@@ -5497,15 +5497,6 @@ break
 
 
 
-// DM chatbot
-
-if (!isCmd && !m.isGroup){
-    const botreply = await axios.get(`http://api.brainshop.ai/get?bid=168777&key=qRlSGRCg0wmzNvkJ&uid=[uid]&msg=[${budy}]`)
-    txt = `${botreply.data.cnt}`
-    m.reply(txt)
-   }
-	
-
 
 
 if (budy.startsWith('=>')) {
