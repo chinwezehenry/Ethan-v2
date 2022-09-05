@@ -1826,10 +1826,10 @@ case 'gamble':  case 'bet': {
     const r = f[Math.floor(Math.random () * f.length)]
     if ( r == opp){
     const give = await eco.give(user , cara, value);
-    replay(`*📉 You won 💎${value}*`)
+    replay(`*📉 You won 💎${value}*\n*_👝 Wallet: _💎${balance.wallet}_*`)
     }else{
     const deduct = await eco.deduct(user, cara, value);
-    replay(`*📈 You lost 💎${value}*`)
+    replay(`*📈 You lost 💎${value}*\n*_👝 Wallet: _💎${balance.wallet}_*`)
     }       
      
 
