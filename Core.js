@@ -729,7 +729,8 @@ user.afkReason = ''
 
 if (!m.isGroup && !isCreator){
     if (m.mtype === 'groupInviteMessage'){
-    await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
+    await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
+    //await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
   }
 }
 
@@ -737,7 +738,8 @@ if (!m.isGroup && !isCreator){
 if (!m.isGroup && !isCreator){
     let urls = 'https://chat.whatsapp.com/'
      if (budy.includes(urls)){
-          await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
+          await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
+          //await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
      }
 }
 
@@ -1567,7 +1569,7 @@ case 'ethan': case 'about': {
 case 'rules': case 'botrule': {
           if (isBan) return replay(mess.banned)
           mikupic ='https://wallpapercave.com/wp/wp10524580.jpg'
-          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Don't ask for script_\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Use ${prefix}bot/chat to chat with ai chat bots..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
+          const rule =  `_*❛ ╾╼🎀[Rules]🎀╾╼ ❜*_\n\n\n*➻* _Bot won't join a group it was removed from._\n\n*➻* _use !ethan to get the Official group link and support link_\n\n*➻* _Use ${prefix}bot/chat to chat with ai chat bots..._\n\n*➻* _If you want to add Ethan-Bot in your group then contact the owner by typing *!owner/!mods*_ \n\n*➻* _Dont use wrong command, use the command given in the *help list*_ \n\n*➻* _Dont spam the bot with commands if the bot is not responding, its means the bot maybe offline or under maintenance._ \n\n*➻* _Dont Dm the bot_ \n\n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BAN SOON* 🚫 `
           let law = [
                 {buttonId: `!rules`, buttonText: {displayText: 'Rules'}, type: 1}
                 ]
@@ -5222,6 +5224,20 @@ I am *Ethan-v2*, a bot modified by *JayJay-Ops*.
 ║ ${prefix}welcome
 ║
 ╚════════════╝
+
+╔════⧫💳 𝑬𝒄𝒐𝒏𝒐𝒎𝒚 💳
+║
+║ ${prefix}daily
+║ ${prefix}capacity
+║ ${prefix}deposit
+║ ${prefix}transfer
+║ ${prefix}wallet
+║ ${prefix}bank
+║ ${prefix}rob
+║ ${prefix}withdraw
+║ ${prefix}gamble
+║
+╚════════════╝ 
 
 ╔════⧫⛓️𝑨𝒏𝒕𝒊 𝑳𝒊𝒏𝒌⛓️
 ║
