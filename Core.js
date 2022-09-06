@@ -1818,18 +1818,18 @@ case 'gamble':  case 'bet': {
     let g = (balance.wallet) > parseInt(value)
     if(g == false) return replay(`*You don't have sufficient 💎 Diamond to gamble with*`);
     let k = 50
-    let a = (k) == parseInt(value)
+    let a = (k) > parseInt(value)
    //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
-    if (a == true) return replay(`*Sorry ${pushname}, you can only gamble with 💎50 or more.*`);
+    if (a == true) return replay(`*Sorry ${pushname}, you can only gamble with more than 💎50.*`);
                 //if(balance.wallet < value) return replay('no enough money');
     const f = ["left", "right", "up", "down"]
     const r = f[Math.floor(Math.random () * f.length)]
     if ( r == opp){
-    const give = await eco.give(user , cara, value[0]);
-    replay(`*📉 You won 💎${value[0]}*`)
+    const give = await eco.give(user , cara, texts[0]);
+    replay(`*📉 You won 💎${texts[0]}*`)
     }else{
-    const deduct = await eco.deduct(user, cara, value[0]);
-    replay(`*📈 You lost 💎${value[0]}*`)
+    const deduct = await eco.deduct(user, cara, texts[0]);
+    replay(`*📈 You lost 💎${texts[0]}*`)
     }       
      
 
