@@ -1739,7 +1739,49 @@ break
 
 //--------------rob---------------------
 
+case 'rob':  case 'attack': {
+	if (!text) return replay("Use ${prefix}rob @user")
+	const target =
+			             m.quoted && m.mentionedJid.length === 0
+			             ? m.quoted.sender
+			             : m.mentionedJid[0] || null;    
+           if (!target || target === m.sender) return replay("what are you trying to do!")
+           if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+        while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+        const cara = "cara"
+        const user1 = m.sender
+        const user2 = target
+	    const k = 500
+	const balance1  = await eco.balance(user1, cara)
+	const balance2  = await eco.balance(user2, cara)
+	const typ = ['ran','rob','caught'];
+    const random = typ[Math.floor(Math.random() * typ.length)];
+    if (k > balance1.wallet) return replay(`*☹️ You don't have enough money to pay incase you get caught*`);
+    if (k > balance2.wallet) return replay(``*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*`);
+    let tpy = random
+  switch (random) {
+          case 'ran':
+                await replay(`*Your victim escaped, be more scaryðŸ˜¤ next time.*`)
+     
+                break
+          case 'rob':
+            const deduct1 = await eco.deduct(user2, cara, balance2.wallet);
+            const add2 = eco.give(user1, cara, balance2.wallet); 
+                await replay(`*🤑 Robbery operation successfully.🗡️*`)
+     
+                break
+          case 'caught':
+             const deduct2 = await eco.deduct(user1, cara, balance1.wallet); 
+                 await replay(`*Sorry FBI👮 caught up with you, you lost all 💎 in wallet.*`)
+     
+               break
+  default:
+   await replay('*What are you trying to do*.')
+   
+   }
 
+}
+break
 
 //--------------withdraw---------------------
 
