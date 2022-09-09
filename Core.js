@@ -1663,9 +1663,9 @@ case 'deposit':  case 'pay-in': {
 		const value = text.trim();
         const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 	const cara = "cara"
-	const deposit = await eco.deposit(user, cara, value);
-	        if (deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
-	        reply(`Successfully Deposited 💎${deposit.amount} to your bank.`)
+	if (deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
+        const deposit1 = await eco.deposit(user, cara, value);
+	  reply(`*Successfully Deposited 💎${value} to your bank.`) //deposit.amount replace with value
 }
 break
 
@@ -1795,7 +1795,7 @@ case 'withdraw':  case 'withdrawal': {
         const withdraw = await eco.withdraw(user, cara, query);
         if(withdraw.noten) return replay('*🏧 Insufficient fund in bank*'); //if user states more than whats in his wallet
         const add = eco.give(user, cara, query);
-          replay(`*ALERT >>*  _💎${withdraw.amount} has been added in your wallet._`)
+          replay(`*🏧 ALERT*  _💎${withdraw.amount} has been added in your wallet._`)
         
 }
 break
