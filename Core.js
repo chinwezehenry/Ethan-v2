@@ -1659,7 +1659,6 @@ break
 case 'deposit':  case 'pay-in': {
         if (isBan) return reply(mess.banned)	 			
         if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 		if (!text) return replay("*Provide the amount you want to deposit!*");
 		const value = text.trim();
         const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
