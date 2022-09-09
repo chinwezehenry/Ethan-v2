@@ -1739,51 +1739,7 @@ break
 
 //--------------rob---------------------
 
-case 'rob':  case 'attack': {
-      if (isBan) return reply(mess.banned)	 			
-      if (isBanChat) return reply(mess.bangc)
-	  let value = text.trim().split(" ");
-	  if (value[0] === "") return replay(`Use ${prefix}rob @user/quote`);
-	  const target =
-			               m.quoted && m.mentionedJid.length === 0
-			               ? m.quoted.sender
-			               : m.mentionedJid[0] || null;    
-             if (!target || target === m.sender) return replay("Are you scared of being caught? 😂")         
-             if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
-       while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
-       const k = 250
-       const cara = "cara"
-       const user1 = m.sender
-       const user2 = target
-       const balance1 = await eco.balance(user1, cara); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-       const balance2 = await eco.balance(user2, cara); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-       if (k > balance1.wallet) return replay (`*You don't have enough to pay incase you get caught.*`)
-       if ( k > balance2.wallet ) return replay (`*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*`)
-       const typ = ["ran","rob","caught",];
-       const random = typ[Math.floor(Math.random() * typ.length)];
-       switch (value) {
-          case 'ran':         
-                await replay(`*Your victim escaped, be more scary😤 next time.*`)
-     
-                break
-          case 'rob':
-            const deduct1 = await eco.deduct(user2, cara, balance2.wallet);
-            const give = eco.give(user1, cara, balance2.wallet); 
-                await replay(`*Robbery operation successfully.\n\n🤑 New balance: 💎${balance1.wallet}*`)
-     
-                break
-          case 'caught':
-             const deduct2 = await eco.deduct(user1, cara, balance1.wallet);
-                 await replay(`*👮: you got caught and paid 💎${balance1.wallet} .*`)
-     
-               break
-  default:
-   await replay('*Sorry i think we are have bugs in bot.*')
-   
-   }
 
-}
-break
 
 //--------------withdraw---------------------
 
