@@ -1656,19 +1656,20 @@ break
 
 //---------------deposit--------------------
 
+
 case 'deposit':  case 'pay-in': {
         if (isBan) return reply(mess.banned)	 			
         if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-		if (!text) return replay("*Provide the amount you want to deposit!*");
-		const value = text.trim();
-        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-	const cara = "cara"
-	if (deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
-        const deposit1 = await eco.deposit(user, cara, value);
-	  reply(`*Successfully Deposited 💎${value} to your bank.`) //deposit.amount replace with value
+		if (!text) return replay("Provide the amount you want to deposit!");
+		const texts = text.trim();
+		const user = m.sender;
+		const cara = 'cara'
+        const deposit = await eco.deposit(user, cara, texts);
+            if(deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
+             replay(`Successfully Deposited 💎${deposit.amount} to your bank.`)
+		
 }
 break
-
 
 
 //--------------transfer---------------------
