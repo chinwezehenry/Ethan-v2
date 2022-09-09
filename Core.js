@@ -1658,12 +1658,12 @@ break
 
 case 'deposit':  case 'pay-in': {
         if (isBan) return reply(mess.banned)	 			
-        if (isBanChat) return reply(mess.bangc)
-	if (!text) return replay(`Provide the amount you want to deposit! ${pushname}`)
-	if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+        if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+        const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+		if (!text) return replay("*Provide the amount you want to deposit!*");
+		const value = text.trim();
         const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 	const cara = "cara"
-	let value = text.trim();
 	const deposit = await eco.deposit(user, cara, value);
 	        if (deposit.noten) return replay('You can\'t deposit what you don\'t have.'); //if user states more than whats in his wallet
 	        reply(`Successfully Deposited 💎${deposit.amount} to your bank.`)
@@ -1740,7 +1740,7 @@ break
 //--------------rob---------------------
 
 case 'rob':  case 'attack': {
-	if (!text) return replay("Use ${prefix}rob @user")
+	if (!text) return replay(`Use ${prefix}rob @user`)
 	const target =
 			             m.quoted && m.mentionedJid.length === 0
 			             ? m.quoted.sender
@@ -1751,7 +1751,7 @@ case 'rob':  case 'attack': {
         const cara = "cara"
         const user1 = m.sender
         const user2 = target
-	    const k = 500
+	    const k = 250
 	const balance1  = await eco.balance(user1, cara)
 	const balance2  = await eco.balance(user2, cara)
 	const typ = ['ran','rob','caught'];
