@@ -1757,7 +1757,7 @@ case 'rob':  case 'attack': {
 	const typ = ['ran','rob','caught'];
     const random = typ[Math.floor(Math.random() * typ.length)];
     if (k > balance1.wallet) return replay(`*☹️ You don't have enough money to pay incase you get caught*`);
-    if (k > balance2.wallet) return replay(``*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*`);
+    if (k > balance2.wallet) return replay(`*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*`);
     let tpy = random
   switch (random) {
           case 'ran':
