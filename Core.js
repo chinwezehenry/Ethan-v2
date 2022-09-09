@@ -1777,11 +1777,13 @@ case 'rob':  case 'attack': {
                  await replay(`*👮: you got caught and paid 💎${balance1.wallet} .*`)
      
                break
-
+  default:
+   await replay('*Sorry i think we are have bugs in bot.*')
+   
+   }
 
 }
 break
-
 
 //--------------withdraw---------------------
 
