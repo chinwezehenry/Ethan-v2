@@ -729,8 +729,8 @@ user.afkReason = ''
 
 if (!m.isGroup && !isCreator){
     if (m.mtype === 'groupInviteMessage'){
-    await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
-    //await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
+    //await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
+    await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
   }
 }
 
@@ -738,8 +738,8 @@ if (!m.isGroup && !isCreator){
 if (!m.isGroup && !isCreator){
     let urls = 'https://chat.whatsapp.com/'
      if (budy.includes(urls)){
-          await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
-          //await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
+          //await Miku.sendMessage(m.chat, {text: `Sorry i can't join anymore groups as i have reached my limit\n\nFor further info you can ask my *Owner* by typing *${prefix}owner*`}, { quoted: m })
+          await Miku.sendMessage(m.chat, {text: `I can't join the group untill my *Owner* ask me to join. Type *${prefix}owner* to get owner number and ask him, then wait for his reply.`},  { quoted: m })
      }
 }
 
@@ -1731,7 +1731,7 @@ case 'bank':  case 'levee': {
     const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     const cara = "cara"
     const balance = await eco.balance(user, cara); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-    await replay(`*🏦 ${pushname}'s Bank:*\n\n_💎${balance.bank}/${balance.bankCapacity}_`);
+    await replay(`*🏦 ${pushname}'s Bank:*\n\n_💎${balance.bank}_`); ///${balance.bankCapacity}
 }
 break
 
@@ -1841,42 +1841,8 @@ case 'gamble':  case 'bet': {
     }       
      
 
-/*
-    let cor = (r == opp)
-    switch (r) {
-       case 'right':               
-               replay(`*You bet 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
-               if (cor)
-                  const give = await eco.give(user, cara, value);
-                  replay(`*📉 You won 💎${value}*`)               
-                  const deduct = await eco.deduct(user, cara, value);
-                  replay(`*📈 You lost 💎${value}*`)               
-          break
-        case 'left':
-               replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
-               if (cor)
-               const give = await eco.give(user, cara, value);
-               replay(`*📉 You won 💎${value}*`)               
-               const deduct = await eco.deduct(user, cara, value);
-               replay(`*📈 You lost 💎${value}*`)               
-          break
-        case 'up':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
-               if (cor)
-               const give = await eco.give(user, cara, value);
-               replay(`*📉 You won 💎${value}*`)               
-               const deduct = await eco.deduct(user, cara, value);
-               replay(`*📈 You lost 💎${value}*`)               
-          break 
-        case 'down':
-               return replay(`*Your bet for 💎${value} on the ${opp} direction*\n\n*✅ Correct: ${cor}*`)
-               if (cor)
-               const give = await eco.give(user, cara, value);
-               replay(`*📉 You won 💎${value}*`)               
-               const deduct = await eco.deduct(user, cara, value);
-               replay(`*📈 You lost 💎${value}*`)               
-          break  
-*/   
+
+   
 
 }
 break
@@ -2957,8 +2923,8 @@ if (isBanChat) return reply(mess.bangc)
      break
 
 
-
-     case  'song': case 'jam': {
+/*
+     case  'song': case 'jam': case play': {
 	if (isBan) return reply(mess.banned);	 			
      if (isBanChat) return reply(mess.bangc)
      if (!text) return replay(`🔎 Provide a search term'`)
@@ -2981,7 +2947,7 @@ if (isBanChat) return reply(mess.bangc)
     }
     break
 
-
+*/
 
 
      case 'remove':{
@@ -3727,7 +3693,7 @@ reply("Error link!")
 }
 break
 
-case 'music': case 'play': case 'ytplay': {
+case 'music': case 'play': case 'song': case 'ytplay': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let yts = require("yt-search")
