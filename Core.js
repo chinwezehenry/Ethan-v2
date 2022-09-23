@@ -502,7 +502,7 @@ if (autoreadsw) {
 		Miku.chatRead(from)
 	}
 	}
-
+/*
 if (global.autoreadpmngc) {
 if (command) {
 await Miku.sendPresenceUpdate('composing', m.chat)
@@ -524,6 +524,31 @@ Miku.sendReadReceipt(from, m.sender, [m.key.id])}
 
   if (global.available) { if (m.chat) { Miku.sendPresenceUpdate('available', m.chat) }
   }
+
+*/
+if (global.autoreadpmngc) {
+if (command) {
+await Miku.sendPresenceUpdate('composing', m.chat)
+Miku.sendReadReceipt(from, m.sender, [m.key.id])}
+}
+/*
+  if (global.autoReadGc) {
+  if (m.isGroup) { Miku.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+}
+*/
+
+  if (global.autoReadAll) { if (m.chat) { Miku.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+  }
+
+    if (global.autoRecord) { if (m.chat) { Miku.sendPresenceUpdate('recording', m.chat) }
+}
+
+  if (global.autoTyping) { if (m.chat) { Miku.sendPresenceUpdate('composing', m.chat) }
+}
+
+  if (global.available) { if (m.chat) { Miku.sendPresenceUpdate('available', m.chat) }
+  }
+
 
 const hariRaya = new Date('6 1, 2022 00:00:00')
 			const sekarang = new Date().getTime();
